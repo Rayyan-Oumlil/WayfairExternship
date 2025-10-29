@@ -1,0 +1,24 @@
+# Environment variables and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# n8n temporary files
+.n8n/
+tmp/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python/Node modules (if used later)
+node_modules/
+__pycache__/
+
+# API keys and sensitive data
+api_keys.txt
+credentials.json

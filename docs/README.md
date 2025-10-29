@@ -5,8 +5,7 @@ This folder contains all project documentation, PDFs, and detailed reports.
 ## Project Documentation
 
 ### Project 1 - Moodboard Generator
-- `project1_moodboard_agent.pdf` - Complete workflow documentation
-- `project1_submission.pdf` - Final submission document
+- `project1/README.md` - My experience and final workflow
 
 ### Project 2 - Trend Discovery Agent
 - `project2_trend_agent.pdf` - (coming soon)

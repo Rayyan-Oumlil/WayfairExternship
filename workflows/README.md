@@ -11,12 +11,11 @@ This folder contains exported n8n workflow JSON files and related documentation.
 
 ## Available Workflows
 
-- `moodboard_agent.json` - Project 1: Moodboard Generator Agent
-- `trend_discovery_agent.json` - Project 2: Consumer Trend Discovery Agent (coming soon)
-- `competitor_monitoring_agent.json` - Project 3: Competitor Monitoring Agent (coming soon)
+### Project 1 - Moodboard Generator
+- `project1/moodboard_agent.json` - Final Moodboard Generator workflow
 
-## Documentation
+### Project 2 - Trend Discovery Agent
+- `project2/` - (coming soon)
 
-- `moodboard_agent_documentation.pdf` - Detailed workflow documentation (coming soon)
-- `trend_agent_documentation.pdf` - (coming soon)
-- `competitor_agent_documentation.pdf` - (coming soon)
+### Project 3 - Competitor Monitoring Agent
+- `project3/` - (coming soon)

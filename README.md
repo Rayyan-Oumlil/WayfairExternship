@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Wayfair AI Automation Externship
 
 **Program:** Extern – Wayfair AI Automation Externship  
@@ -33,24 +32,38 @@ Each project builds on the last:
 
 ---
 
-## 🗓 Project Log
+## 🗓 My Progress
 
-See [`project-log.md`](project-log.md) for daily/weekly updates.
+### Week 1 – Orientation
+- Reviewed program materials and met Program Manager Christie Andersen
+- Set up n8n Cloud account and obtained Google Gemini API key
+- Built basic "Hello World" workflow to test node connections
+- Joined Slack community and familiarized with externship structure
 
-| Week | Project | Highlight |
-|------|----------|------------|
-| Week 1 | Orientation | Set up n8n + Gemini API |
-| Week 2 | Project 1 | Built Moodboard Generator Agent |
-| Week 3 | Project 2 | Started Trend Discovery Agent core |
+### Week 2 – Project 1: Moodboard Generator ✅
+**Goal:** Build an AI workflow that turns a short style idea into a moodboard using n8n and Google Gemini.
+
+**Workflow:** `When chat message received → AI Agent (Gemini Chat Model) → Code (clean prompt) → HTTP Request (Gemini Image API) → Code (parse) → Image File Converter`
+
+**Result:** Generated moodboard images from prompts like "Bohemian rugs, neutral tones." Encountered API rate limits but confirmed full end-to-end workflow execution.
+
+**Screenshot:** ![Moodboard Agent Workflow](./screenshots/project1/moodboard_agent_workflow.png)
+
+**Skills learned:** Building low-code AI agents with n8n, prompt engineering for visuals, handling API calls & rate-limit debugging, JSON parsing and data transformation
+
+### Week 3 – Project 2: Trend Discovery Agent 🚧
+*Coming soon...*
 
 ---
 
 ## 🧾 Repository Structure
 
-- `workflows/` → exported n8n JSONs + workflow documentation  
-- `screenshots/` → visual proofs for submissions  
-- `outputs/` → generated files (images, reports)
-- `docs/` → PDF documentation, reports, and submissions
+- `workflows/` → exported n8n JSONs organized by project
+  - `workflows/project1/` → Project 1 workflows
+  - `workflows/project2/` → Project 2 workflows (coming soon)
+- `screenshots/` → visual documentation for all projects
+  - `screenshots/project1/` → Project 1 specific screenshots and outputs
+- `docs/` → project documentation and reports
 
 ---
 
@@ -58,6 +71,3 @@ See [`project-log.md`](project-log.md) for daily/weekly updates.
 
 **Rayyan Oumlil**  
 [LinkedIn](https://www.linkedin.com/in/rayyan-oumlil-871b192b6/) • [GitHub](https://github.com/rayyan-oumlil)
-=======
-# WayfairExternship
->>>>>>> 8c33584106bec6163067c8c04269e85a480dceac

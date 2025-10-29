@@ -1,11 +1,14 @@
 # Screenshots
 
-This folder contains visual documentation of my n8n workflows and generated outputs.
+This folder contains visual documentation for all projects.
 
 ## Project 1 - Moodboard Generator
-- `moodboard_agent.png` - Complete workflow showing all connected nodes
-- `moodboard_output.png` - Sample generated moodboard image
+- `project1/` - Project 1 specific screenshots and outputs
+  - Workflow screenshots
+  - Generated moodboard images
 
 ## Project 2 - Trend Discovery Agent
-- `trend_agent_workflow.png` - (coming soon)
-- `trend_dashboard.png` - (coming soon)
+- `project2/` - (coming soon)
+
+## Project 3 - Competitor Monitoring Agent
+- `project3/` - (coming soon)

@@ -71,7 +71,7 @@
           "parameters": [
             {
               "name": "x-goog-api-key",
-              "value": "AIzaSyD0Ybl6UFFPz30UogGvcMUXv_6SFaoal8g"
+              "value": "YOUR_GEMINI_API_KEY_HERE"
             },
             {
               "name": "Content-Type",

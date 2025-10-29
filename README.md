@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Wayfair AI Automation Externship
 
 **Program:** Extern – Wayfair AI Automation Externship  
@@ -57,3 +58,6 @@ See [`project-log.md`](project-log.md) for daily/weekly updates.
 
 **Rayyan Oumlil**  
 [LinkedIn](https://www.linkedin.com/in/rayyan-oumlil-871b192b6/) • [GitHub](https://github.com/rayyan-oumlil)
+=======
+# WayfairExternship
+>>>>>>> 8c33584106bec6163067c8c04269e85a480dceac

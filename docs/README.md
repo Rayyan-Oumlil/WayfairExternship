@@ -8,8 +8,10 @@ This folder contains all project documentation, PDFs, and detailed reports.
 - `project1/README.md` - My experience and final workflow
 
 ### Project 2 - Trend Discovery Agent
-- `project2_trend_agent.pdf` - (coming soon)
-- `project2_submission.pdf` - (coming soon)
+- Full documentation available in main [README.md](../README.md)
+- `project2/final_trend_report.pdf` - Generated trend analysis report from competitor analysis
+- `project2/system_messages_management.pdf` - System message variations and experiments (Step 6)
+- Workflow: `workflows/project2/market_trend_discovery_agent.json`
 
 ### Project 3 - Competitor Monitoring Agent
 - `project3_competitor_agent.pdf` - (coming soon)

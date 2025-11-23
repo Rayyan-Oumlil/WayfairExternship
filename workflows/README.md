@@ -18,4 +18,5 @@ This folder contains exported n8n workflow JSON files and related documentation.
 - `project2/market_trend_discovery_agent.json` - Complete Market Trend Discovery Agent workflow
 
 ### Project 3 - Competitor Monitoring Agent
-- `project3/` - (coming soon)
+- `project3/competitor_monitoring_agent.json` - Complete Competitor Monitoring Agent workflow
+  - Includes Wayfair scraper, Amazon scrapers, merge logic, and AI analysis

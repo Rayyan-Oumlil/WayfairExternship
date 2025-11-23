@@ -3,7 +3,7 @@
 **Program:** Extern – Wayfair AI Automation Externship  
 **Duration:** Oct 27 – Dec 22, 2025  
 **Program Manager:** Christie Andersen  
-**Progress:** ✅ Project 1 done | ✅ Project 2 done | 🏁 Goal: Professional Award
+**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | 🏁 Goal: Professional Award
 
 ---
 
@@ -16,7 +16,7 @@ Each project builds on the last:
 1. **Orientation:** Program setup & goals  
 2. **Moodboard Generator Agent:** Prompts → Gemini image generation → visual moodboard  
 3. **Consumer Trend Discovery Agent:** Detect design trends via blogs, RSS feeds, and search  
-4. **Competitor Monitoring Agent**  
+4. **Competitor Monitoring Agent:** Scrape and analyze competitor data from Wayfair and Amazon, generate competitive intelligence reports  
 5. **AI Insights & Content Agent**  
 6. **Market Intelligence Dashboard**
 
@@ -78,6 +78,33 @@ Each project builds on the last:
 
 **Skills learned:** Intent detection and workflow routing, RSS feed aggregation, API integration (Google Custom Search), web scraping (product/collection pages), data normalization and merging, system message design for AI agents, HTML report generation, end-to-end AI agent architecture
 
+### Week 5-6 – Project 3: Competitor Monitoring Agent ✅
+**Goal:** Build an AI agent that monitors competitors by scraping product data from Wayfair and Amazon, merging the data, and generating actionable competitive intelligence reports.
+
+**Workflow Steps:**
+1. **Manual Competitor Analysis:** Analyzed Amazon's rugs category with 22 observations (pricing, features, messaging, tactics)
+2. **Wayfair Scraper:** Built scraper to extract product data from Wayfair's rug listings (48 products scraped)
+3. **Amazon Scrapers:** Reused and enhanced Amazon scrapers from Project 2, including Fallback Scraper for resilience
+4. **Data Merging:** Combined Wayfair and Amazon data streams using Merge nodes
+5. **AI Analysis:** Configured AI Agent with system messages to analyze competitor data and generate insights
+6. **Report Generation:** Produced HTML reports with competitive landscape, benchmark summaries, and actionable recommendations
+
+**Result:** Complete Competitor Monitoring Agent that scrapes, merges, and analyzes competitor data to identify pricing gaps, feature trends, and whitespace opportunities for Wayfair.
+
+**Screenshots:**
+- Step 1: ![Manual Competitor Analysis](./screenshots/project3/step1_manual_compeititor_analysis.png)
+- Step 2: ![Wayfair Scraper](./screenshots/project3/step2_wayfair_scraper.png)
+- Step 3: ![Amazon Scraper](./screenshots/project3/step3_amazon_scraper.png)
+- Step 4: ![Amazon Fallback Scraper](./screenshots/project3/step4_amazon_fallback_scraper.png)
+- Step 5: ![Complete Agent](./screenshots/project3/step5_complete_agent.png)
+
+**Documentation & Reports:**
+- [Final Competitor Report (PDF)](./docs/project3/competitor_monitoring_agent_report.pdf) - Generated competitive intelligence report
+- [Final Competitor Report (HTML)](./docs/project3/final_competitor_report.html) - HTML version of the report
+- [Competitor Analysis Data](./docs/project3/competitor_manual_analysis_data.csv) - 22 observations from manual analysis
+
+**Skills learned:** Manual competitive analysis, multi-source web scraping (Wayfair + Amazon), data merging and normalization, resilient scraper architecture (Fallback Scraper), system message experimentation, competitive intelligence report generation, signal vs noise analysis
+
 ---
 
 ## 🧾 Repository Structure
@@ -85,12 +112,15 @@ Each project builds on the last:
 - `workflows/` → exported n8n JSONs organized by project ([README](./workflows/README.md))
   - `workflows/project1/` → Project 1 workflows
   - `workflows/project2/` → Project 2 workflows (Market Trend Discovery Agent)
+  - `workflows/project3/` → Project 3 workflows (Competitor Monitoring Agent)
 - `screenshots/` → visual documentation for all projects ([README](./screenshots/README.md))
   - `screenshots/project1/` → Project 1 specific screenshots and outputs ([README](./screenshots/project1/README.md))
   - `screenshots/project2/` → Project 2 step-by-step screenshots and final trend report ([README](./screenshots/project2/README.md))
+  - `screenshots/project3/` → Project 3 step-by-step screenshots ([README](./screenshots/project3/README.md))
 - `docs/` → project documentation and reports ([README](./docs/README.md))
   - `docs/project1/` → Project 1 personal experience and workflow summary ([README](./docs/project1/README.md))
   - `docs/project2/` → Project 2 reports and documentation ([README](./docs/project2/README.md))
+  - `docs/project3/` → Project 3 reports and documentation ([README](./docs/project3/README.md))
 
 ---
 

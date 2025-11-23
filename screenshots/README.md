@@ -18,4 +18,10 @@ This folder contains visual documentation for all projects.
   - Final trend report PDF
 
 ## Project 3 - Competitor Monitoring Agent
-- `project3/` - (coming soon)
+- `project3/` - Project 3 step-by-step screenshots
+  - Step 1: Manual Competitor Analysis (Google Sheet)
+  - Step 2: Wayfair Scraper
+  - Step 3: Amazon Scraper (reused from Project 2)
+  - Step 4: Amazon Fallback Scraper
+  - Step 5: Complete Competitor Monitoring Agent (merged scrapers + AI analysis)
+  - (More steps coming soon)

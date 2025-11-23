@@ -92,7 +92,7 @@ Each project builds on the last:
 **Result:** Complete Competitor Monitoring Agent that scrapes, merges, and analyzes competitor data to identify pricing gaps, feature trends, and whitespace opportunities for Wayfair.
 
 **Screenshots:**
-- Step 1: ![Manual Competitor Analysis](./screenshots/project3/step1_manual_compeititor_analysis.png)
+- Step 1: ![Manual Competitor Analysis](./screenshots/project3/step1_manual_competitor_analysis.png)
 - Step 2: ![Wayfair Scraper](./screenshots/project3/step2_wayfair_scraper.png)
 - Step 3: ![Amazon Scraper](./screenshots/project3/step3_amazon_scraper.png)
 - Step 4: ![Amazon Fallback Scraper](./screenshots/project3/step4_amazon_fallback_scraper.png)

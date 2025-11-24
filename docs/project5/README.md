@@ -29,8 +29,16 @@ This project is divided into two steps that combine integration and strategic st
 
 | Step | Estimated Time | Modules | Tasks |
 |------|----------------|---------|-------|
-| Step 1: Merging Trend, Competitor, and Insight Pipelines | 2 hours | 1 | 1 |
+| Step 1: Merging Trend, Competitor, and Insight Pipelines | 2 hours | 4 parts | 5 parts |
 | Step 2: Presenting Business Impact | 1.5 hours | 1 | 1 |
+
+### Step 1 Quick Checklist
+
+- [ ] Part 1: Create Supabase account (15 min)
+- [ ] Part 2: Create `agent_output` table in Supabase
+- [ ] Part 3: Convert Project 2 to HTML output
+- [ ] Part 4: Connect Project 2 to Supabase
+- [ ] Part 5: Connect Projects 3 & 4 to Supabase
 
 ## What Are You Working Towards?
 
@@ -48,16 +56,417 @@ You'll connect the dots between data and decisions, showing how intelligence tra
 **Objective:**
 In this step, you'll connect all your previous workflows: from trend discovery and competitor monitoring to content generation, into one live pipeline. You'll set up a Supabase database to store and sync your agent's outputs, link it with n8n, and validate that all data flows correctly into your Google Sheets dashboard. By the end of this step, your entire ecosystem will be connected and automated, ready to deliver live insights, benchmark data, and creative outputs in a single place.
 
-**Tasks:**
-- Connect all previous workflows (trend discovery, competitor monitoring, content generation)
-- Set up Supabase database to store and sync agent outputs
-- Link Supabase with n8n
-- Validate data flows into Google Sheets dashboard
-- Ensure entire ecosystem is connected and automated
+#### Part 1: Create Your Supabase Account (15 minutes)
 
-**Status:** Not started
+**Why:** Supabase gives your agents memory - a reliable space to store, recall, and build upon what they learn.
 
-### Step 2: Presenting Business Impact ⏳
+**Steps:**
+1. ✅ Go to https://supabase.com and click "Get started" → "Sign up with email"
+2. ✅ Enter email & password, submit
+3. ✅ Confirm your email (check inbox/spam for verification link)
+4. ✅ Create New Organization:
+   - Name: Extern (or your preferred name)
+   - Type: Personal or Educational
+   - Plan: Free ($0/month)
+5. ✅ Create New Project:
+   - Organization: Extern (pre-selected)
+   - Project Name: Wayfair
+   - Database password: Set strong password (save it securely - you'll need it later)
+   - Region: Closest to you (or Americas)
+   - Click "Create project"
+6. ✅ Wait for provisioning (takes ~1 minute)
+7. ✅ Familiarize with dashboard (Database, Auth, API, Storage menus)
+
+**Status:** ⏳ Not started
+
+#### Part 2: Create the Table in Supabase
+
+**Steps:**
+1. ✅ Log in to Supabase → Wayfair Project
+2. ✅ Go to Table Editor → Create New Table
+3. ✅ Table name: `agent_output`
+4. ✅ Keep auto-generated `id` column (Primary Key)
+5. ✅ Delete all other columns
+6. ✅ Click Save
+7. ✅ Add 3 new columns:
+
+| Column Name | Data Type | Purpose |
+|------------|-----------|---------|
+| `output_text` | text | Stores the final HTML output of your agent |
+| `agentId` | int2 | Identifies which project the data belongs to |
+| `input_text` | text | Stores the original input or prompt sent to the agent |
+
+8. ✅ Confirm structure: Should have 4 columns total (`id`, `output_text`, `agentId`, `input_text`)
+
+**Status:** ⏳ Not started
+
+#### Part 3: Align Your n8n Workflows
+
+**Why:** Standardize output format across all projects. Project 2 currently exports PDF, but needs HTML output like Projects 3 and 4.
+
+**Steps for Project 2:**
+1. ✅ Open Project 2 workflow in n8n
+2. ✅ Locate final output branch (PDF generation nodes)
+3. ✅ Replace PDF nodes with HTML nodes:
+   - Copy Code + HTML Output nodes from Project 3 or 4
+   - Paste into Project 2 canvas after final analysis node
+   - Connect: AI Agent → Code → HTML Output
+4. ✅ Rename last node to "See HTML Output Here"
+5. ✅ Ensure expression: `{{ $json.cleaned_minified_html }}`
+6. ✅ Test workflow - should show HTML preview in n8n
+
+**Status:** ⏳ Not started
+
+#### Part 4: Wire Up n8n to Supabase (Project 2)
+
+**Steps:**
+1. ✅ **Add Code Node** (after "Analyze All Data" agent):
+   - Mode: Run Once for All Items
+   - Language: JavaScript
+   - Code:
+   ```javascript
+   // Loop over input items and add a new field called 'agent-id' to each JSON object
+   for (const item of $input.all()) {
+     item.json["agent_id"] = 2;
+     item.json["input"] = $('When chat message received').first().json.chatInput;
+   }
+   return $input.all();
+   ```
+
+2. ✅ **Add Supabase Node (Get a Row)**:
+   - Action: Get a row
+   - Resource: Row
+   - Operation: Get
+   - Table: `agent_output`
+   - Select Conditions:
+     - Field: `agentId` (Integer)
+     - Value: `{{ $json.agent_id }}`
+
+3. ✅ **Add If Node**:
+   - Connect: Supabase (Get a Row) → If Node
+   - Condition:
+     - Left Side: `{{ $json.agentId }}`
+     - Operator: Equals (=)
+     - Right Side: `2`
+
+4. ✅ **Add Supabase (Update a Row) Node** (True path):
+   - Resource: Row
+   - Operation: Update
+   - Table: `agent_output`
+   - Select Type: Build Manually
+   - Must Match: Any Select Condition
+   - Select Conditions:
+     - Field: `agentId` (integer)
+     - Condition: Equals
+     - Value: `2`
+   - Data to Send: Define Below for Each Column
+   - Fields:
+     | Field Name | Type | Field Value |
+     |------------|------|-------------|
+     | `output_text` | string | `{{ $('Code').item.json.output }}` |
+     | `agentId` | integer | `2` |
+     | `input_text` | string | `{{ $('Code').item.json.input }}` |
+
+5. ✅ **Add Supabase (Create a Row) Node** (False path):
+   - Resource: Row
+   - Operation: Create
+   - Table: `agent_output`
+   - Data to Send: Define Below for Each Column
+   - Fields:
+     | Field Name | Type | Field Value |
+     |------------|------|-------------|
+     | `output_text` | string | `{{ $('Code').item.json.output }}` |
+     | `agentId` | integer | `2` |
+     | `input_text` | string | `{{ $('Code').item.json.input }}` |
+
+6. ✅ **Connect Supabase Credentials**:
+   - **Step 1: In Supabase**
+     - Go to your project → Settings → API (or Data Keys)
+     - Copy your Project URL under "Data API"
+   - **Step 2: Copy your Secret Key**
+     - Under the same menu → scroll to "Service Role Key" under API Keys
+     - Click "Reveal" → Copy the key
+   - **Step 3: In n8n**
+     - Open any Supabase node → Click "Create New Credential"
+     - Host: Paste your Supabase Project URL
+     - Service Role Secret: Paste the Service Role Key you copied
+     - Click "Save" → n8n will automatically test and confirm your connection
+   - **Step 4: Verify**
+     - Ensure correct Supabase account is selected in all 3 Supabase nodes in the Project 2 workflow
+
+**Status:** ✅ Completed
+
+#### Part 5: Connect Projects 3 and 4 to Supabase
+**Estimated time:** 30 minutes
+
+**Objective:**
+Connect Projects 3 and 4 to Supabase using the same pattern as Project 2, but with different agent IDs so each project stores data in its own unique slot.
+
+**Steps for Project 3:**
+
+1. ✅ **Update Code Node** (after "Analyze All Data" or final AI agent):
+   - Find the line: `item.json["agent_id"] = 2;`
+   - Change to: `item.json["agent_id"] = 3;`
+   - Keep everything else the same
+
+2. ✅ **Update Supabase (Get a Row) Node**:
+   - Select Conditions:
+     - Field: `agentId` (Integer)
+     - Value: `{{ $json.agent_id }}` (should resolve to 3)
+
+3. ✅ **Update If Node**:
+   - Condition:
+     - Left Side: `{{ $json.agentId }}`
+     - Operator: Equals (=)
+     - Right Side: `3` (changed from 2)
+
+4. ✅ **Update Supabase (Update a Row) Node** (True path):
+   - Select Conditions:
+     - Field: `agentId` (integer)
+     - Condition: Equals
+     - Value: `3` (changed from 2)
+   - Fields to Send:
+     | Field Name | Type | Field Value |
+     |------------|------|-------------|
+     | `output_text` | string | `{{ $('Code in JavaScript').item.json.output }}` |
+     | `agentId` | integer | `3` (changed from 2) |
+     | `input_text` | string | `{{ $('Code in JavaScript').item.json.input }}` |
+
+5. ✅ **Update Supabase (Create a Row) Node** (False path):
+   - Fields to Send:
+     | Field Name | Type | Field Value |
+     |------------|------|-------------|
+     | `output_text` | string | `{{ $('Code in JavaScript').item.json.output }}` |
+     | `agentId` | integer | `3` (changed from 2) |
+     | `input_text` | string | `{{ $('Code in JavaScript').item.json.input }}` |
+
+**Steps for Project 4:**
+
+1. ✅ **Update Code Node**:
+   - Find: `item.json["agent_id"] = 2;` or `item.json["agent_id"] = 3;`
+   - Change to: `item.json["agent_id"] = 4;`
+
+2. ✅ **Update Supabase (Get a Row) Node**:
+   - Value: `{{ $json.agent_id }}` (should resolve to 4)
+
+3. ✅ **Update If Node**:
+   - Right Side: `4` (changed from 2 or 3)
+
+4. ✅ **Update Supabase (Update a Row) Node**:
+   - Select Conditions Value: `4`
+   - Fields to Send `agentId`: `4`
+
+5. ✅ **Update Supabase (Create a Row) Node**:
+   - Fields to Send `agentId`: `4`
+
+**Testing:**
+- Run Project 3 workflow → Should create/update row with `agentId = 3`
+- Run Project 4 workflow → Should create/update row with `agentId = 4`
+- Check Supabase → Should see 3 rows total (one for each agent: 2, 3, 4)
+
+**Agent ID Reference:**
+| agentId | Project | Purpose |
+|---------|---------|----------|
+| 2 | Project 2 | Trend Discovery Agent |
+| 3 | Project 3 | Competitor Monitoring Agent |
+| 4 | Project 4 | Content Insights Agent |
+
+**Status:** 
+- ✅ Project 2 connected (agentId = 2) - Working and exporting data
+- ✅ Project 3 connected (agentId = 3) - Working and exporting data
+- ✅ Project 4 connected (agentId = 4) - Working and exporting data
+
+**Screenshots:**
+- Supabase Table Editor: `screenshots/project5/supabase_table_editor.png` - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
+- Supabase Integration Nodes: `screenshots/project5/supabase_integration_nodes.png` - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
+
+### Step 2: Google Sheets Dashboard Integration ⏳
+**Estimated time:** 2 hours
+
+**Objective:**
+Connect Supabase data to Google Sheets to create a live Market Intelligence Dashboard that visualizes insights from all three agents.
+
+#### Part 1: Create Google Cloud Console Account ⏳
+**Estimated time:** 20 minutes
+
+**Why This:**
+Before your AI agent can write data into Google Sheets, it needs permission granted through Google Cloud Console. You'll set up your free account, enable the Google Sheets API, and get your Client ID and Client Secret.
+
+**Steps:**
+
+1. **Go to Google Cloud Console**
+   - Open https://console.cloud.google.com/
+   - Click "Get started for free" and create a personal Google Cloud account using your Gmail ID
+   - You'll receive $300 in free credits (more than enough for this project)
+   - Once your account is ready, you'll land on the Google Cloud Console dashboard
+
+2. **Create a New Project**
+   - In the top bar, click the Project Selector dropdown
+   - Choose "New Project"
+   - Give it a name: "Wayfair Agent" (recommended for clarity)
+   - Click "Create"
+   - Once the project is ready, click "Select Project" to open it
+
+3. **Enable the Google Sheets API**
+   - Use the search bar at the top to look for "Google Sheets API"
+   - Select it from the list
+   - Click "Enable"
+   - You'll be redirected to a page confirming it's active
+
+4. **Create OAuth Credentials**
+   - In the left sidebar, navigate to **APIs & Services → Credentials**
+   - Click **+ Create Credentials → OAuth Client ID**
+   - If prompted to configure a consent screen:
+     - Choose **External** and click **Create**
+     - Add an App Name (like "Wayfair Agent Integration") and your email
+     - Click **Save and Continue**
+   - Go back to **Credentials** and create an OAuth Client ID
+   - Under **Application Type**, select **Web Application**
+   - Name it something simple like "n8n Google Sheets Integration"
+   - Scroll to **Authorized redirect URIs** and paste this exactly:
+     ```
+     https://app.n8n.cloud/rest/oauth2-credential/callback
+     ```
+   - Click **Create**
+   - You'll now see your **Client ID** and **Client Secret**
+
+5. **Save Your Credentials**
+   - Copy both the Client ID and Client Secret
+   - Store them somewhere safe (Notes app, Notion, or Google Doc)
+   - You'll paste them inside your Google Sheets node in n8n in the next module
+
+**Status:** ⏳ Not started
+
+#### Part 2: Connect n8n to Google Sheets ⏳
+**Estimated time:** 30 minutes
+
+**Objective:**
+Build the final intelligence pipeline that connects Supabase to Google Sheets, turning static intelligence into a living system that automatically collects, processes, and visualizes information.
+
+**What This Does:**
+- **Supabase** holds all agent outputs (raw HTML reports from each project)
+- **n8n** acts as the editor - reviews each report, extracts key details, and standardizes them into clean, structured data
+- **Google Sheets** becomes the front page - where insights are published, organized by category, and instantly visible to teams
+
+**Steps:**
+
+1. **Import the Workflow into n8n**
+   - Download the JSON file: `Update sheet Project 5 (Supabase).json`
+   - In n8n, go to **Workflows → Import → Upload** and select this file
+   - Rename it to **Project 5 — Supabase → Sheets Integration**
+   - Don't execute it yet: you'll first connect credentials and IDs
+
+2. **Add Credentials and IDs**
+
+   **a) Supabase:**
+   - Go to **Credentials → Add New → Supabase**
+   - Paste your **Project URL** and **Service Role Key** (found in Supabase → Project Settings → API)
+   - Name it `Supabase-Extern-<YourName>`
+   - Open each Supabase node in your workflow (Get a row1, Get a row2, Get a row3) and select this credential
+   - Confirm that the table name is `agent_output`
+
+   **b) Google Sheets:**
+   - **Before you start:** Make sure you completed the Google Cloud Console steps (you have a Client ID + Client Secret)
+   - Open the Google Sheet template (you'll duplicate it) and note the **Spreadsheet ID** (long string in the URL). Keep it handy.
+
+   **1) Create the Google Sheets credential in n8n:**
+   - In n8n: go to **Credentials → Add New → Google Sheets (OAuth2)**
+   - Paste your **Client ID** and **Client Secret** from Google Cloud Console
+   - Click **Save** then **Authorize** — choose the same Google account that owns the dashboard template
+   - Name the credential: `GoogleSheets-Extern-<YourName>`
+   - **Quick check:** If authorization fails, ensure the Google Cloud OAuth consent screen is configured and the Sheets API is enabled in your Google Project
+
+   **2) Attach the credential to the three Update nodes:**
+   - Open each node (double-click) and confirm the credential is selected:
+     - `Update 1_TrendSignals sheet`
+     - `Update 2_CompetitorMoves sheet`
+     - `Update 3_Allinsights sheet`
+   - Make sure each node shows `GoogleSheets-Extern-<YourName>` under Credentials
+
+   **3) Verify the spreadsheet and sheet selection:**
+   - For each Update node:
+     - Confirm **Document ID (Spreadsheet)** matches the template ID you duplicated
+     - Confirm **Sheet** is the correct tab:
+       - `1_TrendSignals`
+       - `2_CompetitorMoves`
+       - `3_Allinsights`
+
+   **4) Verify column mappings (do this for every Update node):**
+   - Double-click each Update node and scan the **Values to Send / Mapping** area
+   - For every row:
+     - The left column must match the spreadsheet column header exactly (Trend, Category, Detected Date, Size, …)
+     - The value expression on the right must be `{{ $json.<field> }}` where `<field>` corresponds to the output from the preceding Code node
+     - Example: `Trend → {{ $json.trend }}`, `Size → {{ $json.size }}`, `Key Insight → {{ $json.keyInsight }}`, `Input → {{ $json.input }}`
+     - If any field shows a different variable name, fix it to the expected field in the JSON produced by the upstream extract node
+
+   **c) Spreadsheet ID:**
+   - Copy the **Wayfair Dashboard Template ID** from the URL from your duplicated template sheet (the long string between `/d/` and `/edit`)
+   - Paste this value into the `documentId` field inside each of the three Google Sheets nodes
+   - Confirm that each node points to the correct tab:
+     - Tab 1 → `1_TrendSignals`
+     - Tab 2 → `2_CompetitorMoves`
+     - Tab 3 → `3_Allinsights`
+
+3. **Confirm Sheet Tabs and Columns**
+
+   Each tab in your duplicated Google Sheet must have the exact column headers listed below. If you renamed or deleted a column, restore it before running the workflow.
+
+   **Tab: 1_TrendSignals**
+   - Columns: `Trend | Category | Detected Date | Size | Color | Material | Pattern | Style | Feature | Price Bucket | Mentions (Sources) | Key Insight | Source Example | Input`
+
+   **Tab: 2_CompetitorMoves**
+   - Columns: `Category | Feature | Competitor | Product / Collection | Price | Rating | PDP Highlights | Campaign / Social Mention | Last Launch Date | Insight | Wayfair Gap | Suggested Action | Input`
+
+   **Tab: 3_Allinsights**
+   - Columns: `Insight | Related Trend | Related Competitor | Attribute | Summary Insight | Recommended Action | Content Idea | Type (Blog / Social / Campaign) | Impact Level | Owner / Team | Date Created | Input`
+
+   **Note:** The fourth tab, `4_ExecutiveSummary`, is intentionally left out because it already contains built-in formulas that automatically pull data from the first three. It's your live dashboard, not a data input sheet. Every time your workflow runs and new rows are added to the first three tabs, the Executive Summary updates instantly.
+
+4. **Inspect and Update the Workflow**
+
+   Inside n8n, open the following nodes and confirm details:
+   - **Get a row1** → pulls data where `agentId = 2` (Trend Discovery)
+   - **Get a row2** → pulls data where `agentId = 3` (Competitor Monitoring)
+   - **Get a row3** → pulls data where `agentId = 4` (Content Insights)
+   - Each of the three **Gemini Chat Model** nodes reads HTML from Supabase and converts it to JSON
+   - The **Generate output for Excel sheet** nodes give Gemini exact schemas to follow so the output structure matches your dashboard
+   - The **Extract data from AI output** nodes (1, 2, and 3) clean and flatten JSON into individual spreadsheet fields
+   - The **Update sheet** nodes append that data into Google Sheets
+
+   Save the workflow once all credentials and IDs are linked correctly.
+
+5. **Run the Workflow**
+
+   - Click **Execute Workflow** (manual trigger)
+   - Watch the flow:
+     - Supabase nodes fetch the latest HTML reports
+     - Gemini nodes convert them into structured JSON
+     - Extract nodes parse and clean data
+     - Sheets nodes push rows into your dashboard tabs
+   - Open your duplicated Google Sheet and confirm that all three tabs are updated with new data
+
+**Status:** ⏳ Not started
+
+#### Part 3: Create Dashboard Views ✅
+**Estimated time:** Already included in template
+
+**Objective:**
+The Google Sheets template already includes a built-in dashboard view that automatically visualizes insights from all three agents.
+
+**Dashboard Structure:**
+- **Tab 1: 1_TrendSignals** - Receives data from Project 2 (Trend Discovery Agent)
+- **Tab 2: 2_CompetitorMoves** - Receives data from Project 3 (Competitor Monitoring Agent)
+- **Tab 3: 3_Allinsights** - Receives data from Project 4 (Content Insights Agent)
+- **Tab 4: 4_ExecutiveSummary** - **Live dashboard** with built-in formulas that automatically pull data from the first three tabs
+
+**How It Works:**
+- The `4_ExecutiveSummary` tab contains formulas that automatically aggregate and visualize data from tabs 1-3
+- Every time your workflow runs and new rows are added to the first three tabs, the Executive Summary updates instantly
+- No manual formatting needed - the dashboard is alive and updates in real-time
+
+**Status:** ✅ Already configured in template
+
+### Step 3: Presenting Business Impact ⏳
 **Estimated time:** 1.5 hours
 
 **Objective:**
@@ -68,7 +477,7 @@ Create a presentation that highlights your dashboard, key insights, and the stor
 - Explains system and its implications for Wayfair's business strategy
 - Connects data to decisions and shows real impact
 
-**Status:** Not started
+**Status:** ⏳ Not started
 
 ## Integration Architecture
 

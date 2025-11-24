@@ -22,3 +22,6 @@ __pycache__/
 # API keys and sensitive data
 api_keys.txt
 credentials.json
+google_oauth_credentials.txt
+*_credentials.txt
+*_secrets.txt

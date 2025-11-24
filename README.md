@@ -3,7 +3,7 @@
 **Program:** Extern – Wayfair AI Automation Externship  
 **Duration:** Oct 27 – Dec 22, 2025  
 **Program Manager:** Christie Andersen  
-**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | 🏁 Goal: Professional Award
+**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | 🚧 Project 5 in progress | 🏁 Goal: Professional Award
 
 ---
 
@@ -18,7 +18,7 @@ Each project builds on the last:
 3. **Consumer Trend Discovery Agent:** Detect design trends via blogs, RSS feeds, and search  
 4. **Competitor Monitoring Agent:** Scrape and analyze competitor data from Wayfair and Amazon, generate competitive intelligence reports  
 5. **AI Insights & Content Agent:** Transform trend and competitor data into creative marketing content aligned with Wayfair's brand voice  
-6. **Market Intelligence Dashboard**
+6. **Market Intelligence Dashboard:** Integrate all agents into a unified Supabase database and create a live Google Sheets dashboard
 
 ---
 
@@ -149,6 +149,47 @@ Each project builds on the last:
 
 **Skills learned:** Brand voice analysis and translation, system message engineering and prompt design, creative content generation from data insights, A/B testing system message variations, HTML/CSS formatting for AI outputs, debugging web scraping (URL detection, domain variations, bot protection), transforming analytical data into storytelling content, balancing aspiration with relatability in brand messaging
 
+### Week 9-10 – Project 5: Market Intelligence Dashboard 🚧
+**Goal:** Unify all previous workflows (Projects 2, 3, and 4) into a single live pipeline using Supabase database, creating a unified Market Intelligence Dashboard that delivers real-time insights for Wayfair's Rugs team.
+
+**Workflow Steps:**
+1. **Supabase Setup:** Created Supabase account, organization (Extern), and project (Wayfair)
+2. **Database Table:** Created `agent_output` table with columns: `id`, `output_text`, `agentId`, `input_text`
+3. **Project 2 Integration:** Connected Trend Discovery Agent to Supabase (agentId = 2)
+   - Added Code node to tag outputs with agent_id
+   - Added Supabase Get/Update/Create nodes for data persistence
+   - Converted PDF output to HTML for consistency
+4. **Project 3 Integration:** Connected Competitor Monitoring Agent to Supabase (agentId = 3)
+   - Updated Code node with agent_id = 3
+   - Connected Supabase nodes with agentId = 3
+5. **Project 4 Integration:** Connected AI Insights & Content Agent to Supabase (agentId = 4)
+   - Updated Code node with agent_id = 4
+   - Connected Supabase nodes with agentId = 4
+6. **Data Flow Validation:** Verified all 3 agents successfully store outputs in Supabase
+
+**Result:** All three agents (Trend Discovery, Competitor Monitoring, Content Generation) now store their outputs in a unified Supabase database. Each agent maintains one row that gets updated on each run, creating a persistent memory system for market intelligence.
+
+**Database Structure:**
+- **agent_output table:** Centralized storage for all agent outputs
+- **agentId mapping:**
+  - `agentId = 2`: Project 2 (Trend Discovery Agent)
+  - `agentId = 3`: Project 3 (Competitor Monitoring Agent)
+  - `agentId = 4`: Project 4 (AI Insights & Content Agent)
+
+**Screenshots:**
+- Supabase Table Editor: ![Supabase Table](./screenshots/project5/supabase_table_editor.png) - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
+- Supabase Integration Nodes: ![Supabase Nodes](./screenshots/project5/supabase_integration_nodes.png) - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
+- Google Sheets dashboard (to be added)
+
+**Documentation & Resources:**
+- [Project 5 README](./docs/project5/README.md) - Complete integration guide and step-by-step instructions
+- Supabase credentials configured in n8n
+- All workflows connected and tested
+
+**Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, error handling for web scraping timeouts, Referer header configuration for bot protection
+
+**Status:** 🚧 In Progress - Supabase integration complete, Google Sheets dashboard pending
+
 ---
 
 ## 🧾 Repository Structure
@@ -158,16 +199,19 @@ Each project builds on the last:
   - `workflows/project2/` → Project 2 workflows (Market Trend Discovery Agent)
   - `workflows/project3/` → Project 3 workflows (Competitor Monitoring Agent)
   - `workflows/project4/` → Project 4 workflows (AI Insights & Content Agent)
+  - `workflows/project5/` → Project 5 workflows (Market Intelligence Dashboard integration)
 - `screenshots/` → visual documentation for all projects ([README](./screenshots/README.md))
   - `screenshots/project1/` → Project 1 specific screenshots and outputs ([README](./screenshots/project1/README.md))
   - `screenshots/project2/` → Project 2 step-by-step screenshots and final trend report ([README](./screenshots/project2/README.md))
   - `screenshots/project3/` → Project 3 step-by-step screenshots ([README](./screenshots/project3/README.md))
   - `screenshots/project4/` → Project 4 screenshots and documentation ([README](./screenshots/project4/README.md))
+  - `screenshots/project5/` → Project 5 screenshots and documentation ([README](./screenshots/project5/README.md))
 - `docs/` → project documentation and reports ([README](./docs/README.md))
   - `docs/project1/` → Project 1 personal experience and workflow summary ([README](./docs/project1/README.md))
   - `docs/project2/` → Project 2 reports and documentation ([README](./docs/project2/README.md))
   - `docs/project3/` → Project 3 reports and documentation ([README](./docs/project3/README.md))
   - `docs/project4/` → Project 4 reports and documentation ([README](./docs/project4/README.md))
+  - `docs/project5/` → Project 5 integration guide and dashboard documentation ([README](./docs/project5/README.md))
 
 ---
 

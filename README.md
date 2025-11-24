@@ -29,6 +29,9 @@ Each project builds on the last:
 - **Python / JS snippets** (data cleaning, API parsing)
 - **Web scraping + RSS feeds**
 - **Streamlit or simple HTML dashboards**
+- **Supabase** (database for persistent agent memory)
+- **Google Sheets API** (live dashboard integration)
+- **Google Cloud Console** (OAuth2 credentials management)
 
 ---
 
@@ -186,7 +189,7 @@ Each project builds on the last:
 - Supabase credentials configured in n8n
 - All workflows connected and tested
 
-**Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, error handling for web scraping timeouts, Referer header configuration for bot protection
+**Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, error handling for web scraping timeouts, Referer header configuration for bot protection, Google Sheets API integration, OAuth2 authentication setup, Google Cloud Console project management, live dashboard creation with automated data pipelines
 
 **Status:** 🚧 In Progress - Supabase integration complete, Google Sheets dashboard pending
 

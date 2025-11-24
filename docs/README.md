@@ -22,8 +22,10 @@ This folder contains all project documentation, PDFs, and detailed reports.
 - Workflow: `workflows/project3/competitor_monitoring_agent.json`
 
 ### Project 4 - AI Insights & Content Agent
-- `project4_insights_agent.pdf` - (coming soon)
-- `project4_submission.pdf` - (coming soon)
+- `project4/README.md` - Project 4 documentation and progress
+- `project4/content_output.html` - Generated content from test input (blog post, insights, Instagram caption)
+- Screenshot: `screenshots/project4/evaluation_google_doc.png` - Filled evaluation document
+- Workflow: `workflows/project4/wayfair_content_agent.json` (to be exported)
 
 ### Project 5 - Market Intelligence Dashboard
 - `project5_dashboard.pdf` - (coming soon)

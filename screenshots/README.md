@@ -24,4 +24,9 @@ This folder contains visual documentation for all projects.
   - Step 3: Amazon Scraper (reused from Project 2)
   - Step 4: Amazon Fallback Scraper
   - Step 5: Complete Competitor Monitoring Agent (merged scrapers + AI analysis)
-  - (More steps coming soon)
+
+## Project 4 - AI Insights & Content Agent
+- `project4/` - Project 4 screenshots
+  - `ai_content_agent_workflow.png` - Complete AI-Generated Insights & Content Automation workflow
+  - `evaluation_google_doc.png` - Filled evaluation Google Doc with observations and analysis
+  - `wayfair_voice_analysis_doc.png` - Wayfair Brand Voice Analysis Google Doc

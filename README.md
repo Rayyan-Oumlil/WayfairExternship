@@ -3,7 +3,7 @@
 **Program:** Extern – Wayfair AI Automation Externship  
 **Duration:** Oct 27 – Dec 22, 2025  
 **Program Manager:** Christie Andersen  
-**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | 🏁 Goal: Professional Award
+**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | 🏁 Goal: Professional Award
 
 ---
 
@@ -17,7 +17,7 @@ Each project builds on the last:
 2. **Moodboard Generator Agent:** Prompts → Gemini image generation → visual moodboard  
 3. **Consumer Trend Discovery Agent:** Detect design trends via blogs, RSS feeds, and search  
 4. **Competitor Monitoring Agent:** Scrape and analyze competitor data from Wayfair and Amazon, generate competitive intelligence reports  
-5. **AI Insights & Content Agent**  
+5. **AI Insights & Content Agent:** Transform trend and competitor data into creative marketing content aligned with Wayfair's brand voice  
 6. **Market Intelligence Dashboard**
 
 ---
@@ -105,6 +105,50 @@ Each project builds on the last:
 
 **Skills learned:** Manual competitive analysis, multi-source web scraping (Wayfair + Amazon), data merging and normalization, resilient scraper architecture (Fallback Scraper), system message experimentation, competitive intelligence report generation, signal vs noise analysis
 
+### Week 7-8 – Project 4: AI Insights & Content Agent ✅
+**Goal:** Refine a pre-built AI Insights & Content Agent to transform trend and competitor data into creative marketing content that aligns with Wayfair's brand voice and tone.
+
+**Workflow Steps:**
+1. **Import and Explore:** Imported pre-built workflow JSON, explored workflow structure and node connections, renamed workflow to `Wayfair_ContentAgent`
+2. **Evaluate Output:** Ran agent with test input (bohemian rugs from Amazon), generated content output, created evaluation Google Doc with observations, documented first impressions and agent analysis
+3. **Teaching Your Agent Creative Thinking:**
+   - **Studying Wayfair's Content & Voice:** Analyzed Wayfair blog post ("Ask an Editor: How to Flatten a Rug") and Instagram reel to understand brand voice (warm, inviting, confident, aspirational yet relatable)
+   - **Creative Translation Layer:** Transformed data insights into creative marketing content with "why" context
+   - **Rewriting System Messages:** Created 4 System Message variations:
+     - V1: Pricing Strategy Focus (Analytical + Creative Mix)
+     - V2: Feature Differentiation Focus (Lifestyle Benefits)
+     - V3: Messaging & Imagery Focus (Aspirational yet Relatable) ⭐
+     - V4: Emerging Trends Focus (Trend Storytelling)
+4. **Run and Compare Creative Outputs:** Tested all 4 System Message variations with the same input data, generated comparison document, documented tone differences and content focus shifts, identified V3 as most authentic to Wayfair's brand voice
+5. **Submit Your Updated AI Insights & Content Agent:** Refined final system message, generated final content output ("Wayfair Rugs Content Strategy: Dream Home, Real Life"), exported PDF report, recorded Loom video walkthrough, organized all documentation
+
+**Result:** Complete AI Insights & Content Agent that transforms trend signals and competitor data into brand-aligned marketing content. The agent generates blog post strategies, Instagram captions, and creative content ideas that balance aspiration with relatability—matching Wayfair's authentic brand voice.
+
+**Key Workflow Components:**
+- **Find URLs:** Detects and classifies Amazon and Walmart product/collection URLs from input text
+- **Web Scrapers:** Scrapes product and collection data from Amazon and Walmart (with error handling for bot protection)
+- **Data Processing:** Extracts trend signals (consumer preferences, style trends, competitor benchmarks)
+- **AI Agent:** Uses refined system message to transform signals into creative marketing content
+- **Output Generation:** Produces HTML-formatted content with embedded CSS (blog posts, Instagram captions, styling tips)
+
+**Screenshots:**
+- Workflow: ![AI Content Agent Workflow](./screenshots/project4/ai_content_agent_workflow.png)
+- Evaluation: ![Evaluation Google Doc](./screenshots/project4/evaluation_google_doc.png)
+- Brand Voice Analysis: ![Wayfair Voice Analysis](./screenshots/project4/wayfair_voice_analysis_doc.png)
+- System Variation Analysis: ![System Variation Analysis](./screenshots/project4/system_variation_analysis_doc.png)
+- Loom Video: ![Loom Video Screenshot](./screenshots/project4/loom_video_screenshot.png)
+
+**Documentation & Reports:**
+- [Final System Message](./docs/project4/final_system_message.md) - Refined system message with brand voice alignment
+- [System Message Variations](./docs/project4/system_message_variations.md) - All 4 variations tested
+- [Wayfair Brand Voice Analysis](./docs/project4/wayfair_voice_analysis.md) - Analysis of Wayfair's content and voice
+- [Final Content Output (HTML)](./docs/project4/final_content_output.html) - Generated blog post and Instagram captions
+- [Final AI Insights Report (PDF)](./docs/project4/final_ai_insights_content_report.pdf) - PDF version of generated content
+- [Creative Outputs Comparison](https://docs.google.com/open?id=15VvEtWNNzFoyMgUbHr_xM35rNXH-MWJxvxf8NGyQojI) - Google Doc comparing all 4 variations
+- [Loom Video Walkthrough](https://www.loom.com/share/088acce7cad74119a47e76129c9a0286) - Full workflow demo
+
+**Skills learned:** Brand voice analysis and translation, system message engineering and prompt design, creative content generation from data insights, A/B testing system message variations, HTML/CSS formatting for AI outputs, debugging web scraping (URL detection, domain variations, bot protection), transforming analytical data into storytelling content, balancing aspiration with relatability in brand messaging
+
 ---
 
 ## 🧾 Repository Structure
@@ -113,14 +157,17 @@ Each project builds on the last:
   - `workflows/project1/` → Project 1 workflows
   - `workflows/project2/` → Project 2 workflows (Market Trend Discovery Agent)
   - `workflows/project3/` → Project 3 workflows (Competitor Monitoring Agent)
+  - `workflows/project4/` → Project 4 workflows (AI Insights & Content Agent)
 - `screenshots/` → visual documentation for all projects ([README](./screenshots/README.md))
   - `screenshots/project1/` → Project 1 specific screenshots and outputs ([README](./screenshots/project1/README.md))
   - `screenshots/project2/` → Project 2 step-by-step screenshots and final trend report ([README](./screenshots/project2/README.md))
   - `screenshots/project3/` → Project 3 step-by-step screenshots ([README](./screenshots/project3/README.md))
+  - `screenshots/project4/` → Project 4 screenshots and documentation ([README](./screenshots/project4/README.md))
 - `docs/` → project documentation and reports ([README](./docs/README.md))
   - `docs/project1/` → Project 1 personal experience and workflow summary ([README](./docs/project1/README.md))
   - `docs/project2/` → Project 2 reports and documentation ([README](./docs/project2/README.md))
   - `docs/project3/` → Project 3 reports and documentation ([README](./docs/project3/README.md))
+  - `docs/project4/` → Project 4 reports and documentation ([README](./docs/project4/README.md))
 
 ---
 

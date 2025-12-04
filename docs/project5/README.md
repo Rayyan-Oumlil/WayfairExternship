@@ -447,6 +447,12 @@ Build the final intelligence pipeline that connects Supabase to Google Sheets, t
 
 **Status:** ✅ Completed - Workflow tested and data successfully flowing to Google Sheets
 
+**Dashboard Link:**
+- Google Sheets Dashboard: https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0
+
+**Loom Recording:**
+- URL: (to be added)
+
 **Testing Guide:**
 See detailed testing instructions in the "Test the Pipeline" section below.
 
@@ -557,7 +563,14 @@ Run all three workflows end-to-end, verify Google Sheet updates accurately, and 
 - Clean, reliable data: All columns parsed and readable
 - Traceability: Input column links clearly to task URLs, insights connect logically across projects
 
-**Status:** ⏳ Not started
+**Status:** ⏳ In Progress
+
+**Deliverables:**
+- ✅ Google Sheets Dashboard: https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0
+- ⏳ Loom Recording URL: (to be added)
+
+**Reflection on Information → Intelligence:**
+- See `docs/project5/REFLECTION.md` for detailed insights
 
 ### Step 4: Presenting Business Impact ⏳
 **Estimated time:** 1.5 hours
@@ -636,8 +649,13 @@ All connected through:
 ## Documentation & Resources
 
 - Workflow files: `workflows/project5/supabase_sheets_integration.json`
-- Screenshots: `screenshots/project5/` (to be created)
-- Dashboard exports: `docs/project5/` (to be created)
+- Screenshots: `screenshots/project5/`
+  - `supabase_table_editor.png` - Supabase table with agent outputs
+  - `supabase_integration_nodes.png` - n8n workflow with Supabase nodes
+  - `update_sheet_workflow.png` - Google Sheets update workflow
+  - `google_sheets_after_execution.png` - Dashboard with populated data
+- Dashboard: https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0
+- Reflection: `docs/project5/REFLECTION.md` - Insights on information becoming intelligence
 - Loom presentation: (to be added)
 
 ---

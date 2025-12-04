@@ -681,6 +681,131 @@ Your closing slide.
 - Google Sheets dashboard with view access
 - Live demonstration during presentation
 
+**Using GPT to Create Your Slides:**
+
+Follow these step-by-step instructions to use GPT to generate professional slide content:
+
+#### Step 1: Give GPT a Persona
+Set the tone and context for GPT:
+
+**Sample Prompt:**
+```
+You are an AI consultant helping me create my final presentation for the Wayfair AI Externship.
+
+I have built several AI agents in n8n — Trend Discovery, Competitor Monitoring, AI Insights, and a Dashboard — to help Wayfair's Rugs Category team track trends and generate insights.
+
+Your goal is to help me create clear, concise, and professional slide content following the official Wayfair Final Presentation Template.
+
+I will share screenshots and outputs from each agent. Once you understand the context, please help me draft slide text for each one.
+```
+
+#### Step 2: Share the Template with GPT
+Upload the Final Presentation Template PDF to GPT and explain the structure:
+
+**Sample Prompt:**
+```
+Here's the structure of my final presentation template:
+
+Slide 1: Cover
+Slide 2: Executive Summary
+Slides 3–6: Agents (Objective, Input Prompt, Input Notes, Attachments, Output Example, Improvements)
+Slide 7: Dashboard
+Slide 8: Reflections
+Slide 9: Thank You
+
+You'll help me create content for each slide, starting with Slide 4 (Trend Discovery Agent).
+
+Once we're done with the agent slides, we'll move backward and finish with Slide 2 (Executive Summary).
+
+[Upload the Template PDF]
+```
+
+#### Step 3: Add Sample Slide as Reference
+Show GPT Slide 3 (Moodboard Generator) as an example:
+
+**Sample Prompt:**
+```
+Before we begin, here's a sample slide from my presentation — Slide 3 (Agent 1: Moodboard Generator).
+
+Please use this as a reference for tone, layout, and structure when drafting the other agent slides.
+
+[Upload Slide 3]
+```
+
+#### Step 4: Add Screenshots and Outputs for Each Agent
+Share your agent details one at a time:
+
+**Example Prompt for Agent 1:**
+```
+I have created a total of three agents, which I'll share one by one.
+
+Here's my first agent: Trend Discovery Agent.
+
+Objective: [Briefly describe what this agent does and why it's valuable.]
+
+Screenshot: [Attach your n8n workflow screenshot.]
+
+[Upload the Output PDF here.]
+
+For now, please review the agent and its output to understand what it does.
+
+I'll share the next agent in my following messages.
+
+Feel free to ask any questions if you need clarification before we start creating the slides.
+```
+
+Repeat for:
+- Agent 2: Competitor Monitoring Agent
+- Agent 3: AI Insights & Content Agent
+- Agent 4: Dashboard Integration
+
+#### Step 5: Ask GPT to Draft Slide Content
+Once GPT has context, ask it to write:
+
+**Sample Prompt:**
+```
+Now that you have the Trend Discovery Agent details and the Moodboard Generator slide as reference, please draft my Slide 4 content following the same tone and structure.
+
+Include sections for:
+- Objective
+- Keep in Mind / Input Notes
+- Attachments
+- Output Example
+- Improvements
+
+Keep it concise and professional — just like a consultant presenting to Wayfair.
+```
+
+You can refine with:
+- "Make it shorter."
+- "Add an example prompt."
+- "Rephrase to sound more strategic."
+
+#### Step 6: Repeat for Each Agent
+Repeat the same process for all agents, maintaining consistency in tone and format.
+
+#### Step 7: Create the Executive Summary (Slide 2) — Last
+Once all agent slides are complete:
+
+**Sample Prompt:**
+```
+Now that we've finished all agent and dashboard slides, please help me write the Executive Summary (Slide 2).
+
+Summarize the project in 4–5 bullet points, including:
+- Objective of the externship
+- Agents built
+- Key insights discovered
+- Future improvements
+```
+
+**Important Note:**
+GPT can help structure and refine your slides, but your presentation should reflect your authentic experience. You'll need to personally add:
+- Your reflections and learnings
+- Your discoveries and key takeaways
+- Your thoughts on improvements and next steps
+
+Especially in the "Reflections" and "Future Improvements" sections, use your own insights from the project.
+
 **Status:** ⏳ Not started
 
 ## Integration Architecture

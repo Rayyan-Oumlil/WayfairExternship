@@ -791,7 +791,6 @@
       "name": "Amazon product"
     }
   ],
-  "pinData": {},
   "connections": {
     "When chat message received": {
       "main": [
@@ -1232,15 +1231,14 @@
       ]
     }
   },
-  "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "e1345da6-8313-48f7-ac35-e04998efda8c",
+  "staticData": {},
+  "pinData": {},
+  "versionId": "efb41ec4-7f4b-40e5-b491-a6126029cd62",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "eda6f915c28a9c4191fda808b93eb4c0fb3379806c4dac42b096222178e08d3c"
+    "templateCredsSetupCompleted": true
   },
-  "id": "r07uIv0kvpHXyWcA",
-  "tags": []
+  "active": false
 }

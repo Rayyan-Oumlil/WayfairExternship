@@ -633,7 +633,6 @@
       "name": "See HTML Output Here"
     }
   ],
-  "pinData": {},
   "connections": {
     "Fetch Wayfair Rugs Page": {
       "main": [
@@ -1003,15 +1002,14 @@
       ]
     }
   },
-  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
+  "staticData": {},
+  "pinData": {},
   "versionId": "37de1239-64f3-4ce6-9c2f-6ef83d3a6510",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "eda6f915c28a9c4191fda808b93eb4c0fb3379806c4dac42b096222178e08d3c"
+    "templateCredsSetupCompleted": true
   },
-  "id": "T7QBcU8iXXy3gZ36",
-  "tags": []
+  "active": false
 }

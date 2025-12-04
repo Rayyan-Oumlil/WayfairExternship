@@ -335,7 +335,7 @@ Before your AI agent can write data into Google Sheets, it needs permission gran
    - Store them somewhere safe (Notes app, Notion, or Google Doc)
    - You'll paste them inside your Google Sheets node in n8n in the next module
 
-**Status:** ⏳ Not started
+**Status:** ✅ Completed
 
 #### Part 2: Connect n8n to Google Sheets ⏳
 **Estimated time:** 30 minutes
@@ -351,7 +351,7 @@ Build the final intelligence pipeline that connects Supabase to Google Sheets, t
 **Steps:**
 
 1. **Import the Workflow into n8n**
-   - Download the JSON file: `Update sheet Project 5 (Supabase).json`
+   - The workflow file is located at: `workflows/project5/supabase_sheets_integration.json`
    - In n8n, go to **Workflows → Import → Upload** and select this file
    - Rename it to **Project 5 — Supabase → Sheets Integration**
    - Don't execute it yet: you'll first connect credentials and IDs

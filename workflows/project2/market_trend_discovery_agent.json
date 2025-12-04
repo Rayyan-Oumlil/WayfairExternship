@@ -7,13 +7,13 @@
           "systemMessage": "You are a user intent classification specialist.\n\nYour task: Determine if the user's input relates to rugs trends.\n\nClassification Rules:\nOutput {\"trend\": \"yes\"} if the user:\n• Mentions product trends, trending topics, or market trends\n• Shares URLs from e-commerce platforms (Amazon, Walmart) suggesting trending items\n• Asks about what's popular, trending, or gaining traction\nOutput {\"trend\": \"no\"} if the user:\n• Asks general questions unrelated to trends\n• Shares content without trend indicators\n\nResponse Format:\nReturn ONLY valid JSON with no additional text or explanation\nBase classification strictly on the provided input—do not infer beyond what's explicitly stated\nAnalyze both direct mentions and contextual signals (URLs, keywords, phrasing)"
         }
       },
-      "id": "e723ed33-81d6-45a2-8a55-96ab876103a9",
+      "id": "633b4507-7c21-4aa5-b56c-f73995aca676",
       "name": "Find User Intent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.6,
       "position": [
-        -1152,
-        480
+        -1936,
+        608
       ]
     },
     {
@@ -23,10 +23,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.3,
       "position": [
-        -1456,
-        480
+        -2240,
+        608
       ],
-      "id": "8465f7e8-5fe3-4de9-bf7a-da6ba2598708",
+      "id": "abecaf70-f3d6-4e0e-8a09-b900bdd518a7",
       "name": "When chat message received",
       "webhookId": "c19ad828-0218-40d8-abd8-88b4e738e38e"
     },
@@ -37,10 +37,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -704,
-        480
+        -1488,
+        608
       ],
-      "id": "31bba028-f851-4060-b9b8-373879da894d",
+      "id": "fd3d666d-ec8b-44a3-8333-37c7f82a2361",
       "name": "Code2"
     },
     {
@@ -48,10 +48,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -1056,
-        672
+        -1840,
+        800
       ],
-      "id": "3d0d6a85-8d16-4d6e-b461-0ecd1e85fa9c",
+      "id": "21c0ae00-beeb-4246-89f8-a3b7806834f2",
       "name": "Simple Memory1"
     },
     {
@@ -61,17 +61,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        -1216,
-        672
+        -2000,
+        800
       ],
-      "id": "cfc696fb-f97f-4865-b5a3-16b3e0acc8bd",
-      "name": "Google Gemini Chat Model1",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "jXqvKhbnUoEYzmzh",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "58bed91e-0b00-4130-befd-508b31816774",
+      "name": "Google Gemini Chat Model1"
     },
     {
       "parameters": {
@@ -101,10 +95,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -416,
-        480
+        -1200,
+        608
       ],
-      "id": "42cca6a0-354b-4516-8daa-acb2494f581b",
+      "id": "b8a9c634-ac23-4787-ad20-d4f7976f22de",
       "name": "If"
     },
     {
@@ -115,11 +109,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1296,
-        352
+        -2080,
+        480
       ],
       "typeVersion": 1,
-      "id": "f081f498-d790-4a11-b3d4-ecdb5d497065",
+      "id": "54bf1e7b-8466-4e64-81fd-f6099b87f8a6",
       "name": "Sticky Note"
     },
     {
@@ -131,10 +125,10 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        -560,
-        896
+        -1344,
+        1024
       ],
-      "id": "9bb52d2e-9d14-4e64-aa0c-9d035e79ea4d",
+      "id": "a04da792-0a78-4609-9496-58773fc03ab7",
       "name": "Basic LLM Chain"
     },
     {
@@ -144,17 +138,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        -592,
-        1072
+        -1376,
+        1200
       ],
-      "id": "cf5c73e2-7ed1-49b0-9cc7-f53a848a5dcb",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "jXqvKhbnUoEYzmzh",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "11dddacc-dfc7-4e05-88bd-6aae7dfe8103",
+      "name": "Google Gemini Chat Model"
     },
     {
       "parameters": {
@@ -164,11 +152,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -720,
-        784
+        -1504,
+        912
       ],
       "typeVersion": 1,
-      "id": "331c3212-081d-4392-bfb5-81844ef631c5",
+      "id": "f88c8006-81d0-4612-ae26-4c5781c838b3",
       "name": "Sticky Note1"
     },
     {
@@ -179,10 +167,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        352,
-        864
+        -432,
+        992
       ],
-      "id": "bfebae2f-2de7-4666-9ae7-609f335cbd38",
+      "id": "100e157f-91ed-4fe9-8299-8e62e2d9554e",
       "name": "RSS – Rug Society (Blog)"
     },
     {
@@ -193,10 +181,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        352,
-        704
+        -432,
+        832
       ],
-      "id": "f2ede752-4479-46c9-a385-a908f7d97861",
+      "id": "9f0fa250-5449-40b0-bf8e-bba0141aa076",
       "name": "RSS – The Spruce (Cleaning/Decor)"
     },
     {
@@ -207,10 +195,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        352,
-        560
+        -432,
+        688
       ],
-      "id": "b521b3db-df9c-47ba-a9dd-f2c907c64017",
+      "id": "2d53845c-bd68-42bf-8f75-f9a0ec7316cd",
       "name": "RSS – ArchDaily (Interior)"
     },
     {
@@ -221,10 +209,10 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
-        352,
-        400
+        -432,
+        528
       ],
-      "id": "b2dd9f35-eaba-4b8e-922e-d504af04afcf",
+      "id": "19f658f6-a514-4c86-bacc-2a1d973ef11a",
       "name": "RSS – Designboom (Rugs)"
     },
     {
@@ -234,10 +222,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        784,
-        528
+        0,
+        656
       ],
-      "id": "0883a8fc-71de-4129-a861-98a6a329ff0a",
+      "id": "67db0195-45ae-47d4-a146-885a8d55bb13",
       "name": "Merge - RSS Feeds"
     },
     {
@@ -248,10 +236,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        976,
-        544
+        192,
+        672
       ],
-      "id": "26ccc5ce-444b-43f3-9ab2-48c5b309d064",
+      "id": "8b9990bf-f11f-4d4e-8194-cc6d4aacd9cf",
       "name": "Split Out1"
     },
     {
@@ -263,11 +251,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        256,
-        288
+        -528,
+        416
       ],
       "typeVersion": 1,
-      "id": "296c44a0-5ab2-4ba9-a882-c1c0d973aa0d",
+      "id": "1d756697-d338-46bf-a229-e0e97cc3714b",
       "name": "Sticky Note2"
     },
     {
@@ -277,10 +265,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1184,
-        544
+        400,
+        672
       ],
-      "id": "d4b7f5c5-7b92-419b-aebc-72def2db9595",
+      "id": "e9180b0d-6b52-45ff-be60-aa6f11405e3d",
       "name": "Filter – Recent Items"
     },
     {
@@ -308,10 +296,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        160,
-        1296
+        -624,
+        1424
       ],
-      "id": "3797975a-5bde-45d1-bd9a-8328151f87ba",
+      "id": "464e9238-9482-45b0-a327-9c4b06ba994f",
       "name": "HTTP Request"
     },
     {
@@ -321,10 +309,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1120,
-        96
+        336,
+        224
       ],
-      "id": "6207154b-dd70-4c0b-8074-7cabee2e373c",
+      "id": "ae7f2010-6d05-4c3b-b82e-71b8af2dd7df",
       "name": "Make Amazon accessible URL1"
     },
     {
@@ -334,10 +322,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1328,
-        96
+        544,
+        224
       ],
-      "id": "49b66eed-2d6a-40ff-b6cc-1dc7fca3fa58",
+      "id": "abf62238-4681-4a57-b6cd-9337ed32496c",
       "name": "Split URLs1"
     },
     {
@@ -347,10 +335,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1680,
-        160
+        896,
+        288
       ],
-      "id": "c5b698c7-ed76-4f5d-a4ef-75f57215cb6a",
+      "id": "dcb73e24-fbf0-4599-8a40-f7da9ba394c1",
       "name": "Amazon Scraper2",
       "onError": "continueRegularOutput"
     },
@@ -361,10 +349,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        576,
-        96
+        -208,
+        224
       ],
-      "id": "7fe90ede-bf62-43e8-b1d1-4f1d593929ec",
+      "id": "3ca7803f-f97a-4815-b755-ef348c9e7090",
       "name": "Amazon collections"
     },
     {
@@ -374,10 +362,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        224,
-        0
+        -560,
+        128
       ],
-      "id": "76e738fa-5189-481a-993b-9b213abbb9a4",
+      "id": "7b512438-00fe-476a-a071-6ab407ba71d3",
       "name": "Amazon scraper"
     },
     {
@@ -387,10 +375,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -112,
-        48
+        -896,
+        176
       ],
-      "id": "2e38e35d-1791-4901-a59e-d4a826124ef3",
+      "id": "4eee09d6-5e22-4b8a-b3e8-7ffea616cab7",
       "name": "Find URLs"
     },
     {
@@ -428,10 +416,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        768,
-        96
+        -16,
+        224
       ],
-      "id": "e0c3324b-0d83-43ca-a3d3-32e99961092e",
+      "id": "3e3b27af-2049-49bf-bd5d-343aa5297b5b",
       "name": "Get HTML of website",
       "retryOnFail": true,
       "maxTries": 5
@@ -474,10 +462,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1504,
-        112
+        720,
+        240
       ],
-      "id": "21fd2540-949e-47be-b65d-86eb3e5b74e3",
+      "id": "01ec0e4c-93c3-4243-900a-831f529b181d",
       "name": "URL wise HTML gather",
       "retryOnFail": true,
       "maxTries": 5,
@@ -499,12 +487,12 @@
         },
         "options": {}
       },
-      "id": "4d15c701-a5fe-416a-afdf-415d2a59d0da",
+      "id": "8418a89b-be30-4cee-94bf-d142a3d6d7de",
       "name": "Extract Amazon Product URLs",
       "type": "n8n-nodes-base.html",
       "position": [
-        960,
-        96
+        176,
+        224
       ],
       "typeVersion": 1.2
     },
@@ -527,10 +515,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1104,
-        -128
+        320,
+        0
       ],
-      "id": "157f4a09-f19e-4931-b8a3-f809c0fb10e9",
+      "id": "baba1ed8-962b-4e67-b64d-2a611ddadcc6",
       "name": "Get HTML Content",
       "onError": "continueRegularOutput"
     },
@@ -541,10 +529,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        784,
-        -128
+        0,
+        0
       ],
-      "id": "a1429eff-3eda-45b7-9b79-9c4bbee878bc",
+      "id": "5a339058-45a7-47e3-948e-ac5b98eac06c",
       "name": "Amazon Products"
     },
     {
@@ -554,10 +542,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1408,
-        -128
+        624,
+        0
       ],
-      "id": "cf984842-ea48-4b4a-9ca3-9aae3c61ad9b",
+      "id": "742d98ab-06a9-4f80-959b-2542aae0b6d6",
       "name": "Get Amazon Product Detail",
       "onError": "continueRegularOutput"
     },
@@ -572,10 +560,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        2960,
-        336
+        2176,
+        464
       ],
-      "id": "a125c2e1-e8e0-4893-8a6f-4fa1e7267ebb",
+      "id": "a137d835-ee05-4c1d-bcc3-a36f22125c05",
       "name": "Analyze All Data"
     },
     {
@@ -585,10 +573,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2576,
-        320
+        1792,
+        448
       ],
-      "id": "9124d26e-2f26-45d0-97a5-2e795d773631",
+      "id": "51f987c5-a3a1-47b8-830a-53076e01096e",
       "name": "Combine all data"
     },
     {
@@ -598,10 +586,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2288,
-        288
+        1504,
+        416
       ],
-      "id": "3ea068fb-1dc0-478b-b6a3-df1a423187ea",
+      "id": "5db6be14-a7fc-4417-81e2-3e815f9178a2",
       "name": "Merge all data"
     },
     {
@@ -621,10 +609,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3504,
-        576
+        2720,
+        704
       ],
-      "id": "c77a3931-0c78-429d-8a1f-3daac8468b32",
+      "id": "ccf70077-4e53-4aeb-b3cc-f83f67b1bc9d",
       "name": "Edit Fields"
     },
     {
@@ -635,11 +623,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        3344,
-        448
+        2560,
+        576
       ],
       "typeVersion": 1,
-      "id": "6d3bafc2-82f7-43f0-b9c0-5abc3027dd22",
+      "id": "00a72d52-c5d3-4fce-a28b-1159fc0fe9eb",
       "name": "Sticky Note9"
     },
     {
@@ -649,10 +637,10 @@
       "type": "n8n-nodes-base.html",
       "typeVersion": 1.2,
       "position": [
-        3920,
-        80
+        3136,
+        208
       ],
-      "id": "ea21cf3f-bbfa-4e18-96dd-b399b9ece9f9",
+      "id": "5762ac65-14c3-4b9d-a83c-b13b541c615c",
       "name": "See HTML output here"
     },
     {
@@ -662,10 +650,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3632,
-        80
+        2848,
+        208
       ],
-      "id": "003a7d4a-daf5-492a-aede-9c013f5a94c7",
+      "id": "77766ed7-0f6e-4784-ba4f-c5cf7a889cfe",
       "name": "Download HTML file from Here"
     },
     {
@@ -675,10 +663,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3376,
-        80
+        2592,
+        208
       ],
-      "id": "63c0574a-1932-4ec3-9757-56ceb3bc9a39",
+      "id": "5492797f-f2ef-478c-9759-3719c57a4bbd",
       "name": "Clean AI output"
     },
     {
@@ -690,11 +678,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        3520,
-        32
+        2736,
+        160
       ],
       "typeVersion": 1,
-      "id": "5c8501a6-05f7-4d84-a4f3-fabbfab2d8fd",
+      "id": "08f119b5-633e-4c28-8af2-94e8e5dcc682",
       "name": "Sticky Note6"
     },
     {
@@ -706,11 +694,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        3840,
-        16
+        3056,
+        144
       ],
       "typeVersion": 1,
-      "id": "890a4a81-6325-40af-8633-abc2517bdbee",
+      "id": "78de8b99-667a-4171-a99d-0aec7b2b8baa",
       "name": "Sticky Note10"
     },
     {
@@ -720,17 +708,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2880,
-        608
+        2096,
+        736
       ],
-      "id": "f956ca2e-8375-41fc-a36c-8568e48146ee",
-      "name": "Google Gemini Chat Model2",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "jXqvKhbnUoEYzmzh",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "a708622e-a861-4342-b497-7206d3f1fc8f",
+      "name": "Google Gemini Chat Model2"
     },
     {
       "parameters": {
@@ -741,15 +723,14 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2816,
-        128
+        2032,
+        256
       ],
       "typeVersion": 1,
-      "id": "cb407bfe-4a12-4b83-af16-d176e94820f1",
+      "id": "8e53631c-96b9-4f7c-b183-1345e8db03ae",
       "name": "Sticky Note3"
     }
   ],
-  "pinData": {},
   "connections": {
     "When chat message received": {
       "main": [
@@ -1157,15 +1138,12 @@
       ]
     }
   },
-  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "c8a2d04d-04f2-4368-bbda-830bdc34269b",
-  "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "eda6f915c28a9c4191fda808b93eb4c0fb3379806c4dac42b096222178e08d3c"
-  },
-  "id": "WPMSzQhMsk9zBHiB",
-  "tags": []
+  "staticData": {},
+  "pinData": {},
+  "versionId": "7aa638bf-9c6f-4733-9c1a-6e09233db0e3",
+  "meta": {},
+  "active": false
 }

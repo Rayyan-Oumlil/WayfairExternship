@@ -1,0 +1,987 @@
+{
+  "name": "Update sheet Project 5(Supabase)",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        -288
+      ],
+      "id": "d9fccae3-c063-4885-be51-299751ee0df4",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "BtAGS2sFCv0Ukdc3",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo",
+          "mode": "list",
+          "cachedResultName": "Wayfair",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "1_TrendSignals",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Trend": "={{ $json.trend }}",
+            "Category": "={{ $json.category }}",
+            "Detected Date": "={{ $json.detectedDate }}",
+            "Size": "={{ $json.size }}",
+            "Color": "={{ $json.color }}",
+            "Material": "={{ $json.material }}",
+            "Pattern": "={{ $json.pattern }}",
+            "Style": "={{ $json.style }}",
+            "Feature": "={{ $json.feature }}",
+            "Price Bucket": "={{ $json.priceBucket }}",
+            "Mentions (Sources)": "={{ $json.mentionsSources }}",
+            "Key Insight": "={{ $json.keyInsight }}",
+            "Source Example": "={{ $json.sourceExample }}",
+            "Input": "={{ $json.input }}"
+          },
+          "matchingColumns": [
+            "Project 2"
+          ],
+          "schema": [
+            {
+              "id": "Trend",
+              "displayName": "Trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Detected Date",
+              "displayName": "Detected Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Size",
+              "displayName": "Size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Color",
+              "displayName": "Color",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Material",
+              "displayName": "Material",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pattern",
+              "displayName": "Pattern",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Style",
+              "displayName": "Style",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Feature",
+              "displayName": "Feature",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Price Bucket",
+              "displayName": "Price Bucket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Mentions (Sources)",
+              "displayName": "Mentions (Sources)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Key Insight",
+              "displayName": "Key Insight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Source Example",
+              "displayName": "Source Example",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1872,
+        -496
+      ],
+      "id": "0c2eef8c-b13e-4550-b08a-723729eae7a3",
+      "name": "Update 1_TrendSignals sheet",
+      "retryOnFail": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7p8hmLWBAbbJmWPT",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo",
+          "mode": "list",
+          "cachedResultName": "Wayfair",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 213058160,
+          "mode": "list",
+          "cachedResultName": "2_CompetitorMoves",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit#gid=213058160"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Category": "={{ $json.category }}",
+            "Feature": "={{ $json.feature }}",
+            "Competitor": "={{ $json.competitor }}",
+            "Product / Collection": "={{ $json.productCollection }}",
+            "Price": "={{ $json.price }}",
+            "Rating": "={{ $json.rating }}",
+            "PDP Highlights": "={{ $json.pdpHighlights }}",
+            "Campaign / Social Mention": "={{ $json.campaignSocialMention }}",
+            "Last Launch Date": "={{ $json.lastLaunchDate }}",
+            "Insight": "={{ $json.insight }}",
+            "Wayfair Gap": "={{ $json.wayfairGap }}",
+            "Suggested Action": "={{ $json.suggestedAction }}",
+            "Input": "={{ $json.input }}"
+          },
+          "matchingColumns": [
+            "Project 2"
+          ],
+          "schema": [
+            {
+              "id": "Competitor",
+              "displayName": "Competitor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Product / Collection",
+              "displayName": "Product / Collection",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Feature",
+              "displayName": "Feature",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Price",
+              "displayName": "Price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Rating",
+              "displayName": "Rating",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PDP Highlights",
+              "displayName": "PDP Highlights",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign / Social Mention",
+              "displayName": "Campaign / Social Mention",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Last Launch Date",
+              "displayName": "Last Launch Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Insight",
+              "displayName": "Insight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Wayfair Gap",
+              "displayName": "Wayfair Gap",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Suggested Action",
+              "displayName": "Suggested Action",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1888,
+        -16
+      ],
+      "id": "178ce9b7-52f0-4826-8a1f-618fdd9af0d6",
+      "name": "Update 2_CompetitorMoves sheet",
+      "retryOnFail": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7p8hmLWBAbbJmWPT",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo",
+          "mode": "list",
+          "cachedResultName": "Wayfair",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 19629565,
+          "mode": "list",
+          "cachedResultName": "3_Allinsights",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit#gid=19629565"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Insight": "={{ $json.insight }}",
+            "Related Trend": "={{ $json.relatedTrend }}",
+            "Related Competitor": "={{ $json.relatedCompetitor }}",
+            "Attribute": "={{ $json.attribute }}",
+            "Summary Insight": "={{ $json.summaryInsight }}",
+            "Recommended Action": "={{ $json.recommendedAction }}",
+            "Content Idea": "={{ $json.contentIdea }}",
+            "Type (Blog / Social / Campaign)": "={{ $json.type }}",
+            "Impact Level": "={{ $json.impactLevel }}",
+            "Owner / Team": "={{ $json.ownerTeam }}",
+            "Date Created": "={{ $json.dateCreated }}",
+            "Input": "={{ $json.input }}"
+          },
+          "matchingColumns": [
+            "Project 2"
+          ],
+          "schema": [
+            {
+              "id": "Insight",
+              "displayName": "Insight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Related Trend",
+              "displayName": "Related Trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Related Competitor",
+              "displayName": "Related Competitor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Attribute",
+              "displayName": "Attribute",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Summary Insight",
+              "displayName": "Summary Insight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Recommended Action",
+              "displayName": "Recommended Action",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Content Idea",
+              "displayName": "Content Idea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Type (Blog / Social / Campaign)",
+              "displayName": "Type (Blog / Social / Campaign)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Impact Level",
+              "displayName": "Impact Level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Owner / Team",
+              "displayName": "Owner / Team",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Date Created",
+              "displayName": "Date Created",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1920,
+        432
+      ],
+      "id": "ef03a7f2-11a5-42ea-93ca-9a43ce280cd1",
+      "name": "Update 3_Allinsights sheet",
+      "retryOnFail": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7p8hmLWBAbbJmWPT",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        192
+      ],
+      "id": "0184baa7-2bcc-4d01-94d3-ea4959a7518a",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "BtAGS2sFCv0Ukdc3",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// === INPUT: LLM output as stringified JSON array ===\nconst rawOutput = items[0].json.output;\n\nconst cleanJSON = rawOutput\n  .replace(/```json/g, '')\n  .replace(/```/g, '')\n  .trim();\n\n\n// Safely parse the JSON string\nlet data;\ntry {\n  const parsed = JSON.parse(cleanJSON);\n  data = Array.isArray(parsed) ? parsed[0] : parsed;\n} catch (error) {\n  throw new Error(`Invalid JSON in output: ${error.message}`);\n}\n\n// === EXTRACT EACH FIELD SEPARATELY ===\nconst trend = data[\"Trend\"] || \"-\";\nconst category = data[\"Category\"] || \"Rugs\"; // fallback\nconst detectedDate = data[\"Detected Date\"] || \"-\";\n// const trendType = data[\"Trend Type\"] || \"-\";\nconst size = data[\"Size\"] || \"-\";\nconst color = data[\"Color\"] || \"-\";\nconst material = data[\"Material\"] || \"-\";\nconst pattern = data[\"Pattern\"] || \"-\";\nconst style = data[\"Style\"] || \"-\";\nconst feature = data[\"Feature\"] || \"-\";\nconst priceBucket = data[\"Price Bucket\"] || \"-\";\nconst mentionsSources = data[\"Mentions (Sources)\"] || \"-\";\nconst keyInsight = data[\"Key Insight\"] || \"-\";\nconst sourceExample = data[\"Source Example\"] || \"-\";\n\n// Clean: replace newlines with space, collapse spaces\nfunction clean(str) {\n  return typeof str === \"string\"\n    ? str.replace(/\\r\\n|\\r|\\n/g, \" \").replace(/\\s+/g, \" \").trim()\n    : str;\n}\n\n// Apply cleaning\nconst cleaned = {\n  trend: clean(trend),\n  category: clean(category),\n  detectedDate: clean(detectedDate),\n  // trendType: clean(trendType),\n  size: clean(size),\n  color: clean(color),\n  material: clean(material),\n  pattern: clean(pattern),\n  style: clean(style),\n  feature: clean(feature),\n  priceBucket: clean(priceBucket),\n  mentionsSources: clean(mentionsSources),\n  keyInsight: clean(keyInsight),\n  sourceExample: clean(sourceExample),\n  input: $('Get a row1').first().json.input_text,\n  project: 2,\n};\n\n// === RETURN FLAT FIELDS ===\nreturn [\n  {\n    json: cleaned\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1616,
+        -496
+      ],
+      "id": "1de2d529-8bc1-4594-8e61-d61d2bec6943",
+      "name": "Extract data from AI output"
+    },
+    {
+      "parameters": {
+        "jsCode": "// === INPUT: LLM output with ```json\nconst rawOutput = items[0].json.output.trim();\n\n// Step 1: Remove ```json and ``` markers\nlet jsonString = rawOutput\n  .replace(/^\\s*```json\\s*/i, '')   // Remove opening ```json\n  .replace(/\\s*```\\s*$/i, '')       // Remove closing ```\n  .trim();\n\n// Optional: Clean up any leftover whitespace\njsonString = jsonString.replace(/\\r\\n|\\r|\\n/g, ' ').replace(/\\s+/g, ' ');\n\n// Step 2: Parse JSON safely\nlet data;\ntry {\n  const parsed = JSON.parse(jsonString);\n  data = Array.isArray(parsed) ? parsed[0] : parsed;\n} catch (error) {\n  throw new Error(`JSON parse failed: ${error.message}\\nExtracted: ${jsonString.substring(0, 200)}...`);\n}\n\n// Step 3: Helper to clean strings\nconst clean = (val) => (typeof val === 'string') ? val.trim() : (val ?? 'N/A');\n\n// Step 4: Extract and flatten all fields\nconst result = {\n  competitor: clean(data[\"Competitor\"]),\n  productCollection: clean(data[\"Product / Collection\"]),\n  category: clean(data[\"Category\"]),\n  feature: clean(data[\"Feature\"]),\n  price: clean(data[\"Price\"]),\n  rating: clean(data[\"Rating\"]),\n  pdpHighlights: clean(data[\"PDP Highlights\"]),\n  campaignSocialMention: clean(data[\"Campaign / Social Mention\"]),\n  lastLaunchDate: clean(data[\"Last Launch Date\"]),\n  insight: clean(data[\"Insight\"]),\n  wayfairGap: clean(data[\"Wayfair Gap\"]),\n  suggestedAction: clean(data[\"Suggested Action\"]),\n  input: $('Get a row2').first().json.input_text,\n  project: 3,\n};\n\n// === RETURN: One clean item with flat fields ===\nreturn [{\n  json: result\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1632,
+        -16
+      ],
+      "id": "eb5fdd14-72c3-48ff-87a8-3d6041b2701e",
+      "name": "Extract data from AI output1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// === INPUT: LLM output as string (may contain code fences) ===\nconst rawOutput = items[0].json.output;\n\n// === STEP 1: Strip Markdown code fences (```json\nlet cleanedOutput = rawOutput.trim();\n\n// Remove optional language specifier: ```json or ```\ncleanedOutput = cleanedOutput.replace(/^```json\\s*/i, '').replace(/^```\\s*/i, '');\n\n// Remove closing ```\ncleanedOutput = cleanedOutput.replace(/```$/, '').trim();\n\n// === STEP 2: Safely parse the JSON string ===\nlet insights;\ntry {\n  insights = JSON.parse(cleanedOutput);\n  if (!Array.isArray(insights)) {\n    throw new Error(\"Parsed output is not an array\");\n  }\n} catch (error) {\n  throw new Error(\n    `Invalid JSON in output: ${error.message}\\n` +\n    `First 200 chars: ${cleanedOutput.substring(0, 200)}...`\n  );\n}\n\n// === STEP 3: Clean function (remove newlines, collapse spaces) ===\nfunction clean(str) {\n  return typeof str === \"string\"\n    ? str.replace(/\\r\\n|\\r|\\n/g, \" \").replace(/\\s+/g, \" \").trim()\n    : str;\n}\n\n// === STEP 4: Map each insight to flat fields ===\nconst result = insights.map(insight => ({\n  json: {\n    insight: clean(insight[\"Insight\"] || \"-\"),\n    relatedTrend: clean(insight[\"Related Trend\"] || \"-\"),\n    relatedCompetitor: clean(insight[\"Related Competitor\"] || \"-\"),\n    attribute: clean(insight[\"Attribute\"] || \"-\"),\n    summaryInsight: clean(insight[\"Summary Insight\"] || \"-\"),\n    recommendedAction: clean(insight[\"Recommended Action\"] || \"-\"),\n    contentIdea: clean(insight[\"Content Idea\"] || \"-\"),\n    type: clean(insight[\"Type (Blog / Social / Campaign)\"] || \"-\"),\n    impactLevel: clean(insight[\"Impact Level\"] || \"-\"),\n    ownerTeam: clean(insight[\"Owner / Team\"] || \"-\"),\n    dateCreated: clean(insight[\"Date Created\"] || \"-\"),\n    input: $('Get a row3').first().json.input_text,\n    project: 4,\n  }\n}));\n\n// === RETURN MULTIPLE ITEMS ===\nreturn result;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1632,
+        432
+      ],
+      "id": "04fd96b4-ef12-4c8e-b659-b06cfb3ba010",
+      "name": "Extract data from AI output2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        656
+      ],
+      "id": "71528e15-ef0e-4c5c-bbe8-7eb6a03b9edc",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "BtAGS2sFCv0Ukdc3",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "agent_output",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "agentId",
+              "keyValue": "4"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        960,
+        432
+      ],
+      "id": "5a76b016-4c21-4154-8d92-09341f9fd685",
+      "name": "Get a row3",
+      "retryOnFail": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vcKhh0aBND37LB61",
+          "name": "Supabase account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "agent_output",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "agentId",
+              "keyValue": "3"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        944,
+        -16
+      ],
+      "id": "77de29db-e4c7-4e8f-8b2e-a9bed47287a5",
+      "name": "Get a row2",
+      "retryOnFail": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vcKhh0aBND37LB61",
+          "name": "Supabase account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "agent_output",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "agentId",
+              "keyValue": "2"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        928,
+        -496
+      ],
+      "id": "bdd6273c-f50e-4c92-8478-f460c7194750",
+      "name": "Get a row1",
+      "retryOnFail": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "vcKhh0aBND37LB61",
+          "name": "Supabase account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output_text }}",
+        "options": {
+          "systemMessage": "=You are a home decor trend strategist. Convert the HTML trend report into **valid JSON** (array of objects) using this exact structure:\n\n[\n  {\n    \"Insight\": \"\",\n    \"Related Trend\": \"\",\n    \"Related Competitor\": \"\",\n    \"Attribute\": \"\",\n    \"Summary Insight\": \"\",\n    \"Recommended Action\": \"\",\n    \"Content Idea\": \"\",\n    \"Type (Blog / Social / Campaign)\": \"\",\n    \"Impact Level\": \"\",\n    \"Owner / Team\": \"\",\n    \"Date Created\": \"{{$now}}\"\n  }\n]\n\n### INPUT HTML REPORT:\n{{ $json.output_text }}\n\n### EXTRACTION RULES:\n\n1. **Insight**  \n   - Short, actionable title (e.g., \"Promote washable 8x10 in distressed abstract\")  \n   - Product + size + style + benefit\n\n2. **Related Trend**  \n   - Main trend from title/h1/h2 (e.g., \"Machine-washable rugs\" → \"Washable rugs expansion\")\n\n3. **Related Competitor**  \n   - Any brand mentioned (e.g., Target, Amazon). Use `-` if none.\n\n4. **Attribute**  \n   - Key traits: `washable / distressed abstract / 8x10 / ivory`  \n   - Format: `feat1 / feat2 / size` (max 4)\n\n5. **Summary Insight**  \n   - 1 sentence: consumer behavior or market gap  \n   - Use report language: \"dominate best-seller lists\", \"pet-friendly\", \"millennial homes\"\n\n6. **Recommended Action**  \n   - Specific: \"Launch 3 SKUs\", \"Feature on homepage\", \"Test email\"\n\n7. **Content Idea**  \n   - Direct quote or idea:  \n     - Blog: \"How to Style Washable Rugs\"  \n     - IG: \"Spill-proof & stylish!\"  \n     - Email: \"New Washable Rugs Are Here!\"\n\n8. **Type (Blog / Social / Campaign)**  \n   - `Blog`\n   - This is gives in output like amazon, walmart etc.\n\n9. **Impact Level**  \n   - `High` (best-seller, dominates)  \n   - `Medium` (growing, opportunity)  \n   - `Low` (niche)\n\n10. **Owner / Team**  \n    - `Merchandising`, `Marketing`, `Creative`, `Product`  \n    - Default: `Marketing`\n\n11. **Date Created**  \n    - Today: `{{ $now.format('YYYY-MM-DD') }}`\n\n### OUTPUT RULES:\n- Output **valid JSON array** (even if 1 item)\n- **No markdown, no code blocks, no extra text**\n- Use double quotes\n- Replace line breaks in values with **space**\n- Use `-` if field missing\n- **Max 3 insights per report** (prioritize strongest)\n\n### EXAMPLE (do not include):\n[\n  {\n    \"Insight\": \"Promote washable low-pile 5×8 in neutral grey\",\n    \"Related Trend\": \"Washable rugs expansion\",\n    \"Related Competitor\": \"Target\",\n    \"Attribute\": \"washable / low-pile / 5x8\",\n    \"Summary Insight\": \"High demand for washable, budget-friendly rugs for families.\",\n    \"Recommended Action\": \"Feature washable SKUs in homepage banner and email.\",\n    \"Content Idea\": \"'Spill-proof. Stress-proof. Discover washable rugs.'\",\n    \"Type (Blog / Social / Campaign)\": \"Blog\",\n    \"Impact Level\": \"High\",\n    \"Owner / Team\": \"Merchandising\",\n    \"Date Created\": \"2025-10-09\"\n  }\n]"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1216,
+        432
+      ],
+      "id": "80b3d810-8119-46bb-8f5e-a38283e420d0",
+      "name": "Generate output for excel sheet 3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output_text }}",
+        "options": {
+          "systemMessage": "=You are a competitive landscape analyst for Wayfair. Convert the HTML competitive report into **valid JSON** (array with one object) using this exact structure:\n\n[\n  {\n    \"Competitor\": \"\",\n    \"Product / Collection\": \"\",\n    \"Category\": \"\",\n    \"Feature\": \"\",\n    \"Price\": \"\",\n    \"Rating\": \"\",\n    \"PDP Highlights\": \"\",\n    \"Campaign / Social Mention\": \"\",\n    \"Last Launch Date\": \"\",\n    \"Insight\": \"\",\n    \"Wayfair Gap\": \"\",\n    \"Suggested Action\": \"\"\n  }\n]\n\n### INPUT HTML REPORT:\n{{ $json.output_text }}\n\n### EXTRACTION RULES:\n\n1. **Competitor**  \n   - Always \"Amazon\" (only competitor present).\n\n2. **Product / Collection**  \n   - Extract the main Amazon product name (e.g., \"Zentavio Area Rugs\").\n\n3. **Category**  \n   - Always \"Rugs\".\n\n4. **Feature**  \n   - Key features from Amazon product (e.g., \"ultra-soft, non-slip, machine-washable\").  \n   - Comma-separated, max 5.\n\n5. **Price**  \n   - Use \"N/A\" if not available. Do **not** guess.\n\n6. **Rating**  \n   - Format: \"4.3\" or \"4.3 out of 5 stars\" → use only number (e.g., \"4.3\").\n\n7. **PDP Highlights**  \n   - Key selling points from Amazon listing (e.g., \"soft comfort, easy cleaning, non-slip\").\n\n8. **Campaign / Social Mention**  \n   - Use \"N/A\" unless explicitly mentioned.\n\n9. **Last Launch Date**  \n   - Use \"N/A\" (no launch date in report).{{ $now }}\n\n10. **Insight**  \n    - One strong insight about Amazon's strength (e.g., \"Amazon emphasizes value and comfort in budget shag rugs\").\n\n11. **Wayfair Gap**  \n    - Where Wayfair is weaker vs Amazon (from \"Whitespace Opportunities\" or \"Key Gaps\").\n\n12. **Suggested Action**  \n    - Actionable fix for Wayfair (from \"Actionable Recommendations\").\n\n### OUTPUT RULES:\n- Output **valid JSON array with exactly 1 object**\n- **No markdown, no code blocks, no extra text**\n- Use double quotes\n- Replace line breaks with **space**\n- Use **N/A** if data missing\n- **Do NOT include HTML**\n\n### EXAMPLE (do not include):\n[\n  {\n    \"Competitor\": \"Amazon\",\n    \"Product / Collection\": \"Zentavio Area Rugs\",\n    \"Category\": \"Rugs\",\n    \"Feature\": \"high-pile, non-slip, easy clean\",\n    \"Price\": \"N/A\",\n    \"Rating\": \"4.3\",\n    \"PDP Highlights\": \"soft comfort, value for money\",\n    \"Campaign / Social Mention\": \"N/A\",\n    \"Last Launch Date\": \"N/A\",\n    \"Insight\": \"Amazon drives sales with benefit-focused messaging and perceived value.\",\n    \"Wayfair Gap\": \"Limited benefit messaging vs technical specs\",\n    \"Suggested Action\": \"Add 'soft & durable' benefit callouts to PDP\"\n  }\n]"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1216,
+        -16
+      ],
+      "id": "b75e646f-c200-447f-be77-b7442b54cb2c",
+      "name": "Generate output for excel sheet 2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output_text }}",
+        "options": {
+          "systemMessage": "=You are a trend data extractor. Convert the HTML trend report into **valid JSON** (array with one object).{{ $now }}\n\n### OUTPUT FORMAT:\n[\n  {\n    \"Trend\": \"\",\n    \"Category\": \"Rugs\",\n    \"Detected Date\": \"YYYY-MM-DD\",\n    \"Trend Type\": \"Current|Emerging|Sustained\",\n    \"Size\": \"\",\n    \"Color\": \"\",\n    \"Material\": \"\",\n    \"Pattern\": \"\",\n    \"Style\": \"\",\n    \"Feature\": \"\",\n    \"Price Bucket\": \"\",\n    \"Mentions (Sources)\": \"\",\n    \"Key Insight\": \"\",\n    \"Source Example\": \"\"\n  }\n]\n\n### INPUT HTML REPORT:\n{{ $json.output_text }}\n\n### INSTRUCTIONS:\n1. Extract data exactly as in your previous TSV logic.\n2. **Detected Date**: Use latest source date (e.g., Oct 27, 2025 → \"2025-10-27\"). If none, use {{ $now.format('YYYY-MM-DD') }}.\n3. **Trend Type**: \n   - \"Current\" → \"strong\", \"actively\", \"focal point\"\n   - \"Emerging\" → \"rising\", \"gaining\", \"increasing\"\n   - \"Sustained\" → \"ongoing\", \"continued\"\n4. All multi-value fields: comma-separated strings (no arrays).\n5. Escape only if needed — keep clean.\n6. If field missing: use `-` (string).\n\n### OUTPUT RULES:\n- Output **only valid JSON** (array with one object).\n- **No markdown, no code blocks, no extra text**.\n- Use double quotes for keys and string values.\n- Replace line breaks in values with spaces.\n\n### EXAMPLE (do not include):\n[\n  {\n    \"Trend\": \"Soft, High-Pile Shag Rugs\",\n    \"Category\": \"Rugs\",\n    \"Detected Date\": \"2025-10-27\",\n    \"Trend Type\": \"Current\",\n    \"Size\": \"8×10, 5×8\",\n    \"Color\": \"Grey, Warm neutrals\",\n    \"Material\": \"Synthetic (polyester)\",\n    \"Pattern\": \"Solid, Textured\",\n    \"Style\": \"Modern\",\n    \"Feature\": \"High-pile, Shag, Soft\",\n    \"Price Bucket\": \"$25 to $75\",\n    \"Mentions (Sources)\": \"Walmart Product Page — Oct 27, 2025\",\n    \"Key Insight\": \"Strong demand for cozy, affordable shag rugs.\",\n    \"Source Example\": \"Walmart Product Page: CozyDesg 8ft x 10ft Area Rugs — Oct 27, 2025\"\n  }\n]"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1216,
+        -496
+      ],
+      "id": "e50f3d23-cc10-4a5b-ada2-33c0b6b0eac8",
+      "name": "Generate output for excel sheet 1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        384,
+        -16
+      ],
+      "id": "512e1e8f-f674-4606-9f08-6f8c4d8f2560",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate output for excel sheet 1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate output for excel sheet 2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract data from AI output": {
+      "main": [
+        [
+          {
+            "node": "Update 1_TrendSignals sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract data from AI output1": {
+      "main": [
+        [
+          {
+            "node": "Update 2_CompetitorMoves sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract data from AI output2": {
+      "main": [
+        [
+          {
+            "node": "Update 3_Allinsights sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate output for excel sheet 3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row3": {
+      "main": [
+        [
+          {
+            "node": "Generate output for excel sheet 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row2": {
+      "main": [
+        [
+          {
+            "node": "Generate output for excel sheet 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row1": {
+      "main": [
+        [
+          {
+            "node": "Generate output for excel sheet 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate output for excel sheet 3": {
+      "main": [
+        [
+          {
+            "node": "Extract data from AI output2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate output for excel sheet 2": {
+      "main": [
+        [
+          {
+            "node": "Extract data from AI output1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate output for excel sheet 1": {
+      "main": [
+        [
+          {
+            "node": "Extract data from AI output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get a row1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get a row2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get a row3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7b19b888-13f6-465a-aeef-c5ef26cfe0cc",
+  "meta": {
+    "instanceId": "a8f17920651d8d94c35083230ef9b84878d03405dc21093c64799021f0316347"
+  },
+  "id": "6VsnuLyet5o5yozT",
+  "tags": []
+}

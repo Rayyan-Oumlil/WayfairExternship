@@ -806,6 +806,10 @@ GPT can help structure and refine your slides, but your presentation should refl
 
 Especially in the "Reflections" and "Future Improvements" sections, use your own insights from the project.
 
+**Automation Option:**
+- See [Presentation Automation Guide](./PRESENTATION_AUTOMATION.md) for using Google Apps Script and Gemini API to automate slide creation
+- Scripts available for programmatic slide generation with JavaScript
+
 **Status:** ⏳ Not started
 
 ## Integration Architecture

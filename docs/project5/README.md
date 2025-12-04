@@ -98,7 +98,10 @@ In this step, you'll connect all your previous workflows: from trend discovery a
 
 8. ✅ Confirm structure: Should have 4 columns total (`id`, `output_text`, `agentId`, `input_text`)
 
-**Status:** ⏳ Not started
+![Supabase Table Editor](screenshots/project5/supabase_table_editor.png)
+*The `agent_output` table structure with data from all 3 agents*
+
+**Status:** ✅ Completed
 
 #### Part 3: Align Your n8n Workflows
 
@@ -277,8 +280,8 @@ Connect Projects 3 and 4 to Supabase using the same pattern as Project 2, but wi
 - ✅ Project 4 connected (agentId = 4) - Working and exporting data
 
 **Screenshots:**
-- Supabase Table Editor: `screenshots/project5/supabase_table_editor.png` - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
-- Supabase Integration Nodes: `screenshots/project5/supabase_integration_nodes.png` - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
+- ![Supabase Table Editor](screenshots/project5/supabase_table_editor.png) - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
+- ![Supabase Integration Nodes](screenshots/project5/supabase_integration_nodes.png) - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
 
 ### Step 2: Google Sheets Dashboard Integration ⏳
 **Estimated time:** 2 hours
@@ -355,6 +358,9 @@ Build the final intelligence pipeline that connects Supabase to Google Sheets, t
    - In n8n, go to **Workflows → Import → Upload** and select this file
    - Rename it to **Project 5 — Supabase → Sheets Integration**
    - Don't execute it yet: you'll first connect credentials and IDs
+   
+   ![Update Sheet Workflow](screenshots/project5/update_sheet_workflow.png)
+   *The n8n Project 5 workflow with Google Sheets Update nodes configured*
 
 2. **Add Credentials and IDs**
 
@@ -444,6 +450,9 @@ Build the final intelligence pipeline that connects Supabase to Google Sheets, t
      - Extract nodes parse and clean data
      - Sheets nodes push rows into your dashboard tabs
    - Open your duplicated Google Sheet and confirm that all three tabs are updated with new data
+   
+   ![Google Sheets After Execution](screenshots/project5/google_sheets_after_execution.png)
+   *The Google Sheets dashboard with data successfully populated from the workflow execution*
 
 **Status:** ✅ Completed - Workflow tested and data successfully flowing to Google Sheets
 
@@ -650,10 +659,10 @@ All connected through:
 
 - Workflow files: `workflows/project5/supabase_sheets_integration.json`
 - Screenshots: `screenshots/project5/`
-  - `supabase_table_editor.png` - Supabase table with agent outputs
-  - `supabase_integration_nodes.png` - n8n workflow with Supabase nodes
-  - `update_sheet_workflow.png` - Google Sheets update workflow
-  - `google_sheets_after_execution.png` - Dashboard with populated data
+  - ![Supabase Table Editor](screenshots/project5/supabase_table_editor.png) - Supabase table with agent outputs
+  - ![Supabase Integration Nodes](screenshots/project5/supabase_integration_nodes.png) - n8n workflow with Supabase nodes
+  - ![Update Sheet Workflow](screenshots/project5/update_sheet_workflow.png) - Google Sheets update workflow
+  - ![Google Sheets After Execution](screenshots/project5/google_sheets_after_execution.png) - Dashboard with populated data
 - Dashboard: https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0
 - Reflection: `docs/project5/REFLECTION.md` - Insights on information becoming intelligence
 - Loom presentation: (to be added)

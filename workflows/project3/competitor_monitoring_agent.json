@@ -18,10 +18,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        -288,
-        160
+        96,
+        96
       ],
-      "id": "2724c6e7-d556-4890-a877-208c749ff952",
+      "id": "a7daf89c-c3d2-4abe-b93a-c1bfdd811c65",
       "name": "Fetch Wayfair Rugs Page"
     },
     {
@@ -31,10 +31,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -32,
-        160
+        352,
+        96
       ],
-      "id": "77f4218c-365d-4ede-b9d7-89b0ee1cdb20",
+      "id": "4005654c-3b71-4147-b916-c31ccd40665f",
       "name": "Extract Rugs Products"
     },
     {
@@ -75,10 +75,10 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        240,
-        160
+        624,
+        96
       ],
-      "id": "82b0568c-f992-49b6-b175-b924f7a3c8c1",
+      "id": "4366b9dc-000b-4451-bf56-40b4e980b39a",
       "name": "Filter Valid Products"
     },
     {
@@ -88,10 +88,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        480,
-        160
+        864,
+        96
       ],
-      "id": "0e94eb65-15dc-42b9-8181-683782b49658",
+      "id": "fed0b15c-28da-460e-aed3-8bd5d071821e",
       "name": "Create Final JSON"
     },
     {
@@ -101,10 +101,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        160
+        1072,
+        96
       ],
-      "id": "acf7d1d4-0a35-4ac3-8100-435994fdb723",
+      "id": "9a384484-5d22-4992-a176-944f8200fd73",
       "name": "Code in JavaScript"
     },
     {
@@ -114,10 +114,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        832
+        1072,
+        768
       ],
-      "id": "f589ea2d-61d5-4b00-ab1d-493c86173cd0",
+      "id": "b5864ef0-3413-4889-850f-62e9a9776801",
       "name": "Make Amazon accessible URL1"
     },
     {
@@ -127,10 +127,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        896,
-        832
+        1280,
+        768
       ],
-      "id": "7588287c-c158-49a6-a151-9d74a1f1b1f6",
+      "id": "2d67e529-5e7a-43ee-bf52-de3d92cdcf82",
       "name": "Split URLs1"
     },
     {
@@ -140,10 +140,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1312,
-        832
+        1696,
+        768
       ],
-      "id": "92373c46-1350-4f9a-b5fa-40e7b3574c5e",
+      "id": "387ae3b4-81f6-40d0-adfe-67687ce19078",
       "name": "Amazon Scraper2",
       "onError": "continueRegularOutput"
     },
@@ -156,11 +156,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -656,
-        400
+        -272,
+        336
       ],
       "typeVersion": 1,
-      "id": "9913b195-efaa-48a3-83f0-472da7e38825",
+      "id": "bf9af4cb-4c37-4a83-9506-c4b9db6b9de7",
       "name": "Sticky Note4"
     },
     {
@@ -170,10 +170,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        48,
-        832
+        432,
+        768
       ],
-      "id": "63083cba-1f88-4dfc-8daa-c16a826372f4",
+      "id": "19e2ac93-22c3-4145-8551-f1d1ed9de25f",
       "name": "Amazon collections"
     },
     {
@@ -183,10 +183,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -352,
-        672
+        32,
+        608
       ],
-      "id": "c132ebe6-cb1e-487d-bf0e-c49a14f3092a",
+      "id": "9f3fc74c-e3a3-4e55-bc9b-88f2869d480e",
       "name": "Amazon scraper"
     },
     {
@@ -196,10 +196,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -576,
-        672
+        -192,
+        608
       ],
-      "id": "badc5edd-53b9-4a45-a804-0fa77707c87b",
+      "id": "62b19a4f-6e09-4e7f-9b87-74e7f42d47ae",
       "name": "Find URLs"
     },
     {
@@ -219,10 +219,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        272,
-        832
+        656,
+        768
       ],
-      "id": "445f19c5-e16a-49e9-a508-ff9d500fcbbe",
+      "id": "4bb61f1f-b0f6-4350-84df-47f8eaa4a936",
       "name": "Get HTML of website"
     },
     {
@@ -244,10 +244,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1088,
-        832
+        1472,
+        768
       ],
-      "id": "2d227cd0-8f7c-4818-b497-472d4ad5615c",
+      "id": "bae2cd58-db67-4863-bf5d-3c0bbff6d6c1",
       "name": "URL wise HTML gather",
       "onError": "continueRegularOutput"
     },
@@ -267,12 +267,12 @@
         },
         "options": {}
       },
-      "id": "1ca7854b-40c4-46dd-8124-146295ef99af",
+      "id": "a17088c3-3635-4339-b8f3-b0f481263746",
       "name": "Extract Amazon Product URLs",
       "type": "n8n-nodes-base.html",
       "position": [
-        480,
-        832
+        864,
+        768
       ],
       "typeVersion": 1.2
     },
@@ -295,10 +295,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        624,
-        672
+        1008,
+        608
       ],
-      "id": "01061545-439c-42b1-8b96-aada9b6595d1",
+      "id": "fa7ededa-0bf7-4c78-8936-41880c3884ea",
       "name": "Get HTML Content",
       "onError": "continueRegularOutput"
     },
@@ -309,10 +309,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        16,
-        672
+        400,
+        608
       ],
-      "id": "c1723de9-f36e-4104-b2be-890bc2c08199",
+      "id": "e3dd6c34-b7e4-4d05-931e-df2abffb024c",
       "name": "Amazon Products"
     },
     {
@@ -322,10 +322,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1248,
-        672
+        1632,
+        608
       ],
-      "id": "37223ca8-78d7-4dbb-9427-1ad64233e39c",
+      "id": "4ade508a-5c9e-429e-913d-c4f1dcc26509",
       "name": "Get Amazon Product Detail",
       "onError": "continueRegularOutput"
     },
@@ -336,10 +336,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -128,
-        816
+        256,
+        752
       ],
-      "id": "18998ae3-4312-446d-adac-298254c9c242",
+      "id": "044b5a1f-c0bb-4e87-98dd-046f46266623",
       "name": "Wait",
       "webhookId": "932b795a-d58e-4d66-b877-3f3e8d38a31c"
     },
@@ -352,11 +352,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -384,
-        64
+        0,
+        0
       ],
       "typeVersion": 1,
-      "id": "32d60e16-dc7f-42ad-8eb0-58072cb20a48",
+      "id": "a7b625ea-a679-40d3-84ff-a06b9eec09db",
       "name": "Sticky Note"
     },
     {
@@ -366,10 +366,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.3,
       "position": [
-        -1472,
-        656
+        -1088,
+        592
       ],
-      "id": "39168358-03c3-4d65-bf23-3697d942f577",
+      "id": "9c85272b-e074-40cc-a76b-7e048fd62587",
       "name": "When chat message received",
       "webhookId": "2636a033-c470-42fe-b03f-e08d736037f6"
     },
@@ -380,10 +380,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -528,
-        1088
+        -144,
+        1024
       ],
-      "id": "49da0bc7-3b27-4263-abab-913b0f3470cc",
+      "id": "f2a3c085-33fb-4e04-adbf-78f59e5dfa2a",
       "name": "Wait1",
       "webhookId": "00ad5567-1b90-45f5-a407-f6c4ae5283f6"
     },
@@ -412,10 +412,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        -320,
-        1088
+        64,
+        1024
       ],
-      "id": "ac11bc3e-4a9b-4204-84c3-179d949c5700",
+      "id": "e32248c8-c91b-477a-b9c6-821ad698f789",
       "name": "HTTP Request",
       "retryOnFail": true
     },
@@ -438,10 +438,10 @@
       "type": "n8n-nodes-base.html",
       "typeVersion": 1.2,
       "position": [
-        -112,
-        1088
+        272,
+        1024
       ],
-      "id": "fee7e1c6-8090-4ba1-9716-a929a40c5702",
+      "id": "3b7b2e96-a541-431b-b62e-a60cde05fbc8",
       "name": "Extract Amazon Product Data"
     },
     {
@@ -451,10 +451,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        96,
-        1088
+        480,
+        1024
       ],
-      "id": "cbac5acc-94aa-433a-ae02-82581a8a14f6",
+      "id": "444c2c77-99e1-4eb3-bf4c-3254258119be",
       "name": "Make Amazon Accessible URLs"
     },
     {
@@ -464,10 +464,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        304,
-        1088
+        688,
+        1024
       ],
-      "id": "5a08e859-a590-42e6-bf76-88b99997dcff",
+      "id": "a71d3d40-ee03-4442-8502-bb0c1ba67e50",
       "name": "Split URLs"
     },
     {
@@ -497,23 +497,23 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        512,
-        1088
+        896,
+        1024
       ],
-      "id": "8a9392cf-8893-40ee-9eb4-17c9a8f2f19d",
+      "id": "230b7e38-6e9d-4615-bb5a-8ee4284636e9",
       "name": "HTTP Request for Product"
     },
     {
       "parameters": {
-        "jsCode": "const cheerio = require('cheerio');\nconst results = [];\n\nfor (const item of $input.all()) {\n  try {\n    const url = item.json.url;\n    const html = item.json.data;\n    const $ = cheerio.load(html);\n    \n    const name = $('#productTitle').text().trim();\n    let price = $('span.a-price span.a-price-whole').first().text().trim();\n    if (price) {\n      price = `$${price}`;\n    }\n    \n    const details = [];\n    $('#feature-bullets ul.a-unordered-list li span.a-list-item').each((i, el) => {\n      const text = $(el).text().trim();\n      if (text && text.length > 0) {\n        details.push(text);\n      }\n    });\n    \n    const pattern = $('#inline-twister-expanded-dimension-text-pattern_name').text().trim();\n    \n    results.push({\n      url,\n      name,\n      price,\n      details,\n      pattern,\n      scraped_at: new Date().toISOString()\n    });\n  } catch (error) {\n    console.error('Error processing item:', error);\n    results.push({\n      url: item.json.url || 'Unknown URL',\n      name: '',\n      price: '',\n      details: [],\n      pattern: '',\n      error: error.message,\n      scraped_at: new Date().toISOString()\n    });\n  }\n}\n\n// Return a single item containing all scraped data as an array\nreturn [{\n  json: {\n    competitor_data: results,\n    total_scraped: results.length,\n    successful_scrapes: results.filter(r => !r.error).length,\n    failed_scrapes: results.filter(r => r.error).length,\n    batch_scraped_at: new Date().toISOString()\n  }\n}];"
+        "jsCode": "// Code de remplacement pour Amazon Scraper SANS cheerio\n// À copier-coller dans les Code nodes qui utilisent cheerio\n\nconst results = [];\n\nfor (const item of $input.all()) {\n  try {\n    const url = item.json.url;\n    const html = item.json.data || '';\n    \n    // Fonction helper pour extraire du texte entre balises HTML\n    function extractBySelector(html, selector) {\n      if (!html) return '';\n      \n      // Pour les IDs comme #productTitle\n      if (selector.startsWith('#')) {\n        const id = selector.substring(1);\n        // Chercher l'élément avec cet ID\n        const regex = new RegExp(`<[^>]*id=[\"']${id.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}[\"'][^>]*>([\\\\s\\\\S]*?)<\\\\/[^>]+>`, 'i');\n        const match = html.match(regex);\n        if (match && match[1]) {\n          return match[1].replace(/<[^>]+>/g, '').replace(/\\s+/g, ' ').trim();\n        }\n      }\n      \n      // Pour les sélecteurs complexes comme span.a-price span.a-price-whole\n      if (selector.includes('span.a-price span.a-price-whole')) {\n        const regex = /<span[^>]*class=[\"'][^\"']*a-price[^\"']*[\"'][^>]*>[\\s\\S]*?<span[^>]*class=[\"'][^\"']*a-price-whole[^\"']*[\"'][^>]*>([\\s\\S]*?)<\\/span>/i;\n        const match = html.match(regex);\n        if (match && match[1]) {\n          return match[1].replace(/<[^>]+>/g, '').replace(/\\s+/g, ' ').trim();\n        }\n      }\n      \n      return '';\n    }\n    \n    // Extraire le nom du produit\n    let name = extractBySelector(html, '#productTitle');\n    if (!name) {\n      // Fallback: chercher directement dans le HTML\n      const nameMatch = html.match(/<span[^>]*id=[\"']productTitle[\"'][^>]*>([\\s\\S]*?)<\\/span>/i);\n      if (nameMatch && nameMatch[1]) {\n        name = nameMatch[1].replace(/<[^>]+>/g, '').replace(/\\s+/g, ' ').trim();\n      }\n    }\n    \n    // Extraire le prix\n    let price = extractBySelector(html, 'span.a-price span.a-price-whole');\n    if (price) {\n      price = `$${price}`;\n    } else {\n      // Fallback: chercher d'autres formats de prix\n      const priceRegex = /<span[^>]*class=[\"'][^\"']*a-price[^\"']*[\"'][^>]*>[\\s\\S]*?(\\d+\\.?\\d*)[\\s\\S]*?<\\/span>/i;\n      const priceMatch = html.match(priceRegex);\n      if (priceMatch && priceMatch[1]) {\n        price = `$${priceMatch[1]}`;\n      }\n    }\n    \n    // Extraire les détails (feature bullets)\n    const details = [];\n    // Chercher le conteneur ul avec feature-bullets\n    const ulRegex = /<ul[^>]*class=[\"'][^\"']*feature-bullets[^\"']*[\"'][^>]*>([\\s\\S]*?)<\\/ul>/i;\n    const ulMatch = html.match(ulRegex);\n    \n    if (ulMatch && ulMatch[1]) {\n      // Extraire tous les li avec span.a-list-item\n      const liRegex = /<li[^>]*>[\\s\\S]*?<span[^>]*class=[\"'][^\"']*a-list-item[^\"']*[\"'][^>]*>([\\s\\S]*?)<\\/span>[\\s\\S]*?<\\/li>/gi;\n      let liMatch;\n      while ((liMatch = liRegex.exec(ulMatch[1])) !== null) {\n        const text = liMatch[1].replace(/<[^>]+>/g, '').replace(/\\s+/g, ' ').trim();\n        if (text && text.length > 0 && !text.match(/^\\s*$/)) {\n          details.push(text);\n        }\n      }\n    }\n    \n    // Extraire le pattern\n    let pattern = extractBySelector(html, '#inline-twister-expanded-dimension-text-pattern_name');\n    if (!pattern) {\n      const patternMatch = html.match(/<span[^>]*id=[\"']inline-twister-expanded-dimension-text-pattern_name[\"'][^>]*>([\\s\\S]*?)<\\/span>/i);\n      if (patternMatch && patternMatch[1]) {\n        pattern = patternMatch[1].replace(/<[^>]+>/g, '').replace(/\\s+/g, ' ').trim();\n      }\n    }\n    \n    results.push({\n      url,\n      name: name || '',\n      price: price || '',\n      details: details.length > 0 ? details : [],\n      pattern: pattern || '',\n      scraped_at: new Date().toISOString()\n    });\n  } catch (error) {\n    console.error('Error processing item:', error);\n    results.push({\n      url: item.json.url || 'Unknown URL',\n      name: '',\n      price: '',\n      details: [],\n      pattern: '',\n      error: error.message,\n      scraped_at: new Date().toISOString()\n    });\n  }\n}\n\n// Return format selon le workflow\n// Pour Project 3 (competitor_data):\nreturn [{\n  json: {\n    competitor_data: results,\n    total_scraped: results.length,\n    successful_scrapes: results.filter(r => !r.error).length,\n    failed_scrapes: results.filter(r => r.error).length,\n    batch_scraped_at: new Date().toISOString()\n  }\n}];\n\n// Pour Project 2 et 4 (products):\n// return [{\n//   json: {\n//     products: results,\n//     total_scraped: results.length,\n//     successful_scrapes: results.filter(r => !r.error).length,\n//     failed_scrapes: results.filter(r => r.error).length,\n//     batch_scraped_at: new Date().toISOString()\n//   }\n// }];\n\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        720,
-        1088
+        1104,
+        1024
       ],
-      "id": "5138ebb7-a0f0-4205-9dcf-1d4ab444a178",
+      "id": "65e41282-0cda-45fe-8cb1-6419ea540401",
       "name": "Extract Data"
     },
     {
@@ -523,10 +523,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        1712,
-        816
+        2096,
+        752
       ],
-      "id": "ee7f47de-1c17-49b8-b94b-2f267d9fcdc6",
+      "id": "f04666ed-3568-42f3-8609-5e5ebcc4223a",
       "name": "Merge1"
     },
     {
@@ -534,10 +534,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2016,
-        448
+        2400,
+        384
       ],
-      "id": "51be580b-4614-4ae4-9e21-10d48dbfb49a",
+      "id": "655603f5-10c6-4051-b4dd-8b21b282b950",
       "name": "Merge2"
     },
     {
@@ -551,10 +551,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2320,
-        448
+        2704,
+        384
       ],
-      "id": "0992e9ee-1a8f-4f7c-83fa-002035a68d1c",
+      "id": "7f8abd2c-3d91-4886-b508-97f3c4a84bea",
       "name": "AI Agent",
       "executeOnce": true
     },
@@ -565,15 +565,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2320,
-        624
+        2704,
+        560
       ],
-      "id": "1526c796-bc87-4b4a-8ba5-1c6e0d73869f",
+      "id": "9f3c032d-b1c3-4a47-883e-fb56c7c7ab8c",
       "name": "Google Gemini Chat Model",
       "credentials": {
         "googlePalmApi": {
-          "id": "GIxhJjjL7SOTjHAN",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "Xvzeaqu81Zp6Drpb",
+          "name": "Google Gemini(PaLM) Api account 3"
         }
       }
     },
@@ -584,10 +584,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2880,
-        448
+        3264,
+        384
       ],
-      "id": "f1a5a70b-838b-449a-9765-7606313a62aa",
+      "id": "32c46c8e-fe2d-4b6b-924b-c8554e46dd10",
       "name": "Clean AI Output"
     },
     {
@@ -599,11 +599,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2240,
-        352
+        2624,
+        288
       ],
       "typeVersion": 1,
-      "id": "e46ea051-3eb6-44c1-8990-054d1b7e7a50",
+      "id": "9fc90980-caf3-4267-9b4e-14f2919db173",
       "name": "Sticky Note1"
     },
     {
@@ -613,10 +613,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3088,
-        448
+        3472,
+        384
       ],
-      "id": "fe9c62f7-519d-404d-aada-be537ac90acf",
+      "id": "e9d5f38b-59fd-4d0c-9fcc-c651faec4837",
       "name": "Download HTML File from Here"
     },
     {
@@ -626,13 +626,14 @@
       "type": "n8n-nodes-base.html",
       "typeVersion": 1.2,
       "position": [
-        3296,
-        448
+        3680,
+        384
       ],
-      "id": "251f28b6-b6b8-4b25-807a-95d8b9fd6538",
+      "id": "4fa6e2dd-33e7-4ed6-9509-43e2f8a02246",
       "name": "See HTML Output Here"
     }
   ],
+  "pinData": {},
   "connections": {
     "Fetch Wayfair Rugs Page": {
       "main": [
@@ -1002,14 +1003,15 @@
       ]
     }
   },
+  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": {},
-  "pinData": {},
-  "versionId": "37de1239-64f3-4ce6-9c2f-6ef83d3a6510",
+  "versionId": "c447fe7d-c6ab-4760-8b03-b64ecb12ed3e",
   "meta": {
-    "templateCredsSetupCompleted": true
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8240b636c6c64f03cc57d45f075cb88cf07c98f3d9cc97aa1dfcede6317c67c0"
   },
-  "active": false
+  "id": "xtsPZlzdk4zzDMIn",
+  "tags": []
 }

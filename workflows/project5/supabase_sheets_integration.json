@@ -8,17 +8,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        1168,
-        -288
+        240,
+        208
       ],
-      "id": "d9fccae3-c063-4885-be51-299751ee0df4",
-      "name": "Google Gemini Chat Model3",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "BtAGS2sFCv0Ukdc3",
-          "name": "Google Gemini(PaLM) Api account 2"
-        }
-      }
+      "id": "661433a6-f244-4dfa-a901-5ea5f01f7e71",
+      "name": "Google Gemini Chat Model3"
     },
     {
       "parameters": {
@@ -208,18 +202,12 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1872,
-        -496
+        944,
+        0
       ],
-      "id": "0c2eef8c-b13e-4550-b08a-723729eae7a3",
+      "id": "3d193ea2-78f6-49dc-8776-e3d37f1fe2fb",
       "name": "Update 1_TrendSignals sheet",
-      "retryOnFail": false,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "7p8hmLWBAbbJmWPT",
-          "name": "Google Sheets account"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -398,18 +386,12 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1888,
-        -16
+        960,
+        480
       ],
-      "id": "178ce9b7-52f0-4826-8a1f-618fdd9af0d6",
+      "id": "97c2ddf2-c31e-40dc-9715-cd07d90d8c7e",
       "name": "Update 2_CompetitorMoves sheet",
-      "retryOnFail": false,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "7p8hmLWBAbbJmWPT",
-          "name": "Google Sheets account"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -577,18 +559,12 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1920,
-        432
+        992,
+        928
       ],
-      "id": "ef03a7f2-11a5-42ea-93ca-9a43ce280cd1",
+      "id": "726236ea-811f-4c98-9688-119cb5884f30",
       "name": "Update 3_Allinsights sheet",
-      "retryOnFail": false,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "7p8hmLWBAbbJmWPT",
-          "name": "Google Sheets account"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -597,17 +573,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        1168,
-        192
+        240,
+        688
       ],
-      "id": "0184baa7-2bcc-4d01-94d3-ea4959a7518a",
-      "name": "Google Gemini Chat Model1",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "BtAGS2sFCv0Ukdc3",
-          "name": "Google Gemini(PaLM) Api account 2"
-        }
-      }
+      "id": "bd50bbfe-2446-4c6b-a157-eeabd93b721b",
+      "name": "Google Gemini Chat Model1"
     },
     {
       "parameters": {
@@ -616,10 +586,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1616,
-        -496
+        688,
+        0
       ],
-      "id": "1de2d529-8bc1-4594-8e61-d61d2bec6943",
+      "id": "8903dd33-3433-4c7d-ab86-e0227e50a967",
       "name": "Extract data from AI output"
     },
     {
@@ -629,10 +599,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1632,
-        -16
+        704,
+        480
       ],
-      "id": "eb5fdd14-72c3-48ff-87a8-3d6041b2701e",
+      "id": "8fa0ed6a-74ec-4a94-b870-d286e1614560",
       "name": "Extract data from AI output1"
     },
     {
@@ -642,10 +612,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1632,
-        432
+        704,
+        928
       ],
-      "id": "04fd96b4-ef12-4c8e-b659-b06cfb3ba010",
+      "id": "c24aab93-08af-4dfc-92b9-c2450886ff98",
       "name": "Extract data from AI output2"
     },
     {
@@ -655,17 +625,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        1168,
-        656
+        240,
+        1152
       ],
-      "id": "71528e15-ef0e-4c5c-bbe8-7eb6a03b9edc",
-      "name": "Google Gemini Chat Model2",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "BtAGS2sFCv0Ukdc3",
-          "name": "Google Gemini(PaLM) Api account 2"
-        }
-      }
+      "id": "4563f810-5362-44ab-864d-6fdbefc2610c",
+      "name": "Google Gemini Chat Model2"
     },
     {
       "parameters": {
@@ -683,18 +647,12 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        960,
-        432
+        32,
+        928
       ],
-      "id": "5a76b016-4c21-4154-8d92-09341f9fd685",
+      "id": "9119bebd-249d-40d2-80c2-48563748ae86",
       "name": "Get a row3",
-      "retryOnFail": false,
-      "credentials": {
-        "supabaseApi": {
-          "id": "vcKhh0aBND37LB61",
-          "name": "Supabase account 4"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -712,18 +670,12 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        944,
-        -16
+        16,
+        480
       ],
-      "id": "77de29db-e4c7-4e8f-8b2e-a9bed47287a5",
+      "id": "81b1967d-6752-4035-bcd3-ce8ffd9ce2e9",
       "name": "Get a row2",
-      "retryOnFail": false,
-      "credentials": {
-        "supabaseApi": {
-          "id": "vcKhh0aBND37LB61",
-          "name": "Supabase account 4"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -741,18 +693,12 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        928,
-        -496
+        0,
+        0
       ],
-      "id": "bdd6273c-f50e-4c92-8478-f460c7194750",
+      "id": "923eb684-02dd-454b-8233-fb3d0464cb67",
       "name": "Get a row1",
-      "retryOnFail": false,
-      "credentials": {
-        "supabaseApi": {
-          "id": "vcKhh0aBND37LB61",
-          "name": "Supabase account 4"
-        }
-      }
+      "retryOnFail": false
     },
     {
       "parameters": {
@@ -765,10 +711,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        1216,
-        432
+        288,
+        928
       ],
-      "id": "80b3d810-8119-46bb-8f5e-a38283e420d0",
+      "id": "7fbb4906-9bd2-4518-a77f-d1d2b98421cb",
       "name": "Generate output for excel sheet 3"
     },
     {
@@ -782,10 +728,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        1216,
-        -16
+        288,
+        480
       ],
-      "id": "b75e646f-c200-447f-be77-b7442b54cb2c",
+      "id": "b1653637-10be-4198-83de-bac5184b972b",
       "name": "Generate output for excel sheet 2",
       "executeOnce": true
     },
@@ -800,10 +746,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        1216,
-        -496
+        288,
+        0
       ],
-      "id": "e50f3d23-cc10-4a5b-ada2-33c0b6b0eac8",
+      "id": "118995bf-7f5c-4263-8c47-338580cd90b0",
       "name": "Generate output for excel sheet 1"
     },
     {
@@ -811,10 +757,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        384,
-        -16
+        -544,
+        480
       ],
-      "id": "512e1e8f-f674-4606-9f08-6f8c4d8f2560",
+      "id": "b2814914-9171-44c5-a11b-4f5ffff2c506",
       "name": "When clicking ‘Execute workflow’"
     }
   ],
@@ -978,10 +924,10 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "7b19b888-13f6-465a-aeef-c5ef26cfe0cc",
+  "versionId": "fea5ccb3-33a8-489d-9ad9-3dd3d5a5b7c3",
   "meta": {
-    "instanceId": "a8f17920651d8d94c35083230ef9b84878d03405dc21093c64799021f0316347"
+    "instanceId": "8240b636c6c64f03cc57d45f075cb88cf07c98f3d9cc97aa1dfcede6317c67c0"
   },
-  "id": "6VsnuLyet5o5yozT",
+  "id": "2E68ZPseFRdCBbOJ",
   "tags": []
 }

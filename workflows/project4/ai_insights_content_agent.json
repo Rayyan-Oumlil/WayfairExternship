@@ -8,10 +8,10 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.3,
       "position": [
-        32,
-        704
+        272,
+        624
       ],
-      "id": "a1afcb78-178c-4641-8e6c-4801f5aa1516",
+      "id": "f7599a3c-5b41-48a6-ab2a-f963c1f5dfb6",
       "name": "When chat message received",
       "webhookId": "afd8f34e-5492-467f-b332-9bae1db00a3b"
     },
@@ -26,10 +26,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        3792,
-        576
+        4032,
+        496
       ],
-      "id": "747b6c13-6919-49f0-9820-47840f3dd0ac",
+      "id": "57adccd0-2a66-43ef-845a-cac2a1d12b6d",
       "name": "AI Agent"
     },
     {
@@ -39,29 +39,29 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        3760,
-        800
+        4000,
+        720
       ],
-      "id": "bb9a9868-4096-493b-80c3-a05a8606a2b0",
+      "id": "48952e3a-98a6-4974-b33d-51943406b0a9",
       "name": "Google Gemini Chat Model",
       "credentials": {
         "googlePalmApi": {
-          "id": "GIxhJjjL7SOTjHAN",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "Xvzeaqu81Zp6Drpb",
+          "name": "Google Gemini(PaLM) Api account 3"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "const input = $input.item.json.output;\n\n// Step 1: Remove the triple backticks and any surrounding whitespace\nconst cleaned = input.replace(/```json|```/g, '').trim();\n\n// Step 2: Parse JSON\nlet parsed;\ntry {\n  parsed = JSON.parse(cleaned);\n} catch (error) {\n  throw new Error(`Failed to parse JSON: ${error.message}`);\n}\n\n// Step 3: Return as an array \"trend_signals\"\nreturn [\n  {\n    json: {\n      trend_signals: [\n        parsed.trend_signal,\n        parsed.competitor_signal,\n        parsed.style_signal\n      ]\n    }\n  }\n];\n"
+        "jsCode": "const input = $input.item.json.output || '';\n\n// Step 1: Try to extract JSON from the output (even if there's text before/after)\nlet jsonString = input;\n\n// Remove markdown code blocks\njsonString = jsonString.replace(/\\s*/gi, '').replace(/```\\s*/g, '').trim();\n\n// Try to find JSON object in the string (look for { ... })\nconst jsonMatch = jsonString.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) {\n  jsonString = jsonMatch[0];\n}\n\n// Step 2: Parse JSON with better error handling\nlet parsed;\ntry {\n  parsed = JSON.parse(jsonString);\n} catch (error) {\n  // If parsing fails, return default values instead of throwing\n  console.error('JSON parse error:', error.message);\n  console.error('Input was:', input.substring(0, 200));\n  parsed = {\n    trend_signal: 'Unable to parse AI output - check the previous node',\n    competitor_signal: '',\n    style_signal: ''\n  };\n}\n\n// Step 3: Return as an array \"trend_signals\" with safe defaults\nreturn [\n  {\n    json: {\n      trend_signals: [\n        parsed.trend_signal || '',\n        parsed.competitor_signal || '',\n        parsed.style_signal || ''\n      ].filter(signal => signal && signal.trim().length > 0)\n    }\n  }\n];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        4176,
-        576
+        4416,
+        496
       ],
-      "id": "33fd9dc8-5981-4242-953b-6617c2da9678",
+      "id": "6bf27f4b-ba64-4b4c-9496-a9c7169bcd69",
       "name": "Code"
     },
     {
@@ -75,10 +75,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.2,
       "position": [
-        4448,
-        576
+        4688,
+        496
       ],
-      "id": "4380efcc-57cc-4427-b629-c5e39e3549e6",
+      "id": "5b0af6c9-e569-4fd1-952f-4b14c4de298d",
       "name": "AI Agent1"
     },
     {
@@ -88,15 +88,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        4384,
-        848
+        4624,
+        768
       ],
-      "id": "f6246f1e-6231-4bd1-a10e-5cf31d0d35a4",
+      "id": "5650c4fc-8a90-4e73-b29a-b5fbb54a52f6",
       "name": "Google Gemini Chat Model1",
       "credentials": {
         "googlePalmApi": {
-          "id": "GIxhJjjL7SOTjHAN",
-          "name": "Google Gemini(PaLM) Api account"
+          "id": "Xvzeaqu81Zp6Drpb",
+          "name": "Google Gemini(PaLM) Api account 3"
         }
       }
     },
@@ -118,10 +118,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [
-        1344,
-        160
+        1584,
+        80
       ],
-      "id": "be7fb084-9bf2-47af-9610-60d8a547c01b",
+      "id": "551c4a5b-5af9-4bc1-a02c-9c07c0bd2ed9",
       "alwaysOutputData": true,
       "onError": "continueRegularOutput"
     },
@@ -152,10 +152,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1344,
-        576
+        1584,
+        496
       ],
-      "id": "fad1448c-f7ee-4917-9ccb-ccfd88297bce",
+      "id": "03b69b80-974a-40b3-84d3-010c8dcde4b2",
       "name": "HTTP Request for Product1",
       "onError": "continueRegularOutput"
     },
@@ -166,10 +166,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1568,
-        160
+        1808,
+        80
       ],
-      "id": "0d5a2343-1e6f-41ee-969e-68865d96d7fe",
+      "id": "29dc396e-64c5-4857-8208-9de8b8bedcbe",
       "name": "Walmart Scraper1",
       "executeOnce": false,
       "onError": "continueRegularOutput"
@@ -181,10 +181,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1616,
-        784
+        1856,
+        704
       ],
-      "id": "34dcbe08-1362-421e-8a9f-b646c591be53",
+      "id": "309d9e5e-a097-4c94-95ad-2c0e200c560f",
       "name": "Make Amazon accessible URL1"
     },
     {
@@ -194,10 +194,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1792,
-        784
+        2032,
+        704
       ],
-      "id": "53c36f58-fe6e-4fdb-be8d-896641c44256",
+      "id": "47a665e6-7f76-4891-a222-289df8f505bf",
       "name": "Split URLs1"
     },
     {
@@ -207,10 +207,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2144,
-        784
+        2384,
+        704
       ],
-      "id": "0c7068b0-c0d3-4825-87f0-3c31c279234d",
+      "id": "b5f47728-d783-43cd-aafe-c39626ab2625",
       "name": "Amazon Scraper2",
       "onError": "continueRegularOutput"
     },
@@ -244,10 +244,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [
-        1328,
-        400
+        1568,
+        320
       ],
-      "id": "c1c937ea-6b17-4bf2-85f0-54c075f03a5b"
+      "id": "51a67a03-5db3-42f6-bc3d-0490cb1aa80a"
     },
     {
       "parameters": {
@@ -267,10 +267,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [
-        1712,
-        400
+        1952,
+        320
       ],
-      "id": "ea3323b7-6f81-4ade-b657-8502f6d1026a"
+      "id": "43913228-7123-4f77-ae50-599904f050c7"
     },
     {
       "parameters": {
@@ -279,10 +279,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1936,
-        400
+        2176,
+        320
       ],
-      "id": "46578bbc-7011-4792-aac3-44e6151160f9",
+      "id": "cb7f93dc-5496-44d8-a4b3-c35a872166fe",
       "name": "Walmart Scraper2"
     },
     {
@@ -292,10 +292,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1120,
-        784
+        1360,
+        704
       ],
-      "id": "f8a86d1f-a7d0-4738-9e0f-5ed08a0cf238",
+      "id": "aea1af14-25d9-4549-a254-9e2226e81015",
       "name": "Amazon collections"
     },
     {
@@ -305,10 +305,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1168,
-        400
+        1408,
+        320
       ],
-      "id": "b17e76e3-3559-4f3f-9605-377522a9f607",
+      "id": "a10ac6b7-665a-45ec-b742-8e085ee13cb5",
       "name": "Walmart Collection"
     },
     {
@@ -318,10 +318,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1152,
-        160
+        1392,
+        80
       ],
-      "id": "65ba75e2-2c62-4f20-b587-c919df325e20",
+      "id": "ed0b44a4-0426-4aa9-9b3a-9589f43391d9",
       "name": "Walmart products"
     },
     {
@@ -331,10 +331,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        928,
-        288
+        1168,
+        208
       ],
-      "id": "d597ae51-c6d6-4bfb-bf79-24c7c553dbc9",
+      "id": "d8992fc4-db09-4bdf-b00b-c7a848b3c18b",
       "name": "Walmart Scaper"
     },
     {
@@ -344,10 +344,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        800,
-        688
+        1040,
+        608
       ],
-      "id": "9e8354f0-8b84-43c2-8509-bf034baaafe1",
+      "id": "f9b06959-607c-4073-a56c-27c65bf2e9a7",
       "name": "Amazon scraper"
     },
     {
@@ -357,10 +357,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        336,
-        704
+        576,
+        624
       ],
-      "id": "ddb816c9-e998-40cb-a072-b3804a4b792c",
+      "id": "a1fbea3f-1c9f-4e32-ae88-615e84be8834",
       "name": "Find URLs"
     },
     {
@@ -370,10 +370,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3536,
-        576
+        3776,
+        496
       ],
-      "id": "a16ab0e7-fa8e-4c0c-84c3-81434f09223d",
+      "id": "a7ed9dd5-066f-43eb-a40c-cca026631032",
       "name": "Combine all data"
     },
     {
@@ -383,10 +383,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        3072,
-        560
+        3312,
+        480
       ],
-      "id": "bd22b285-4806-4ad9-a9ce-a2cedfec4336",
+      "id": "2a9e60df-793f-45a7-9d82-6e57b20d696d",
       "name": "Merge all data"
     },
     {
@@ -418,10 +418,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1024,
-        1120
+        1264,
+        1040
       ],
-      "id": "42ee0597-bb61-4b91-8468-102b90389f85",
+      "id": "210c19a0-e027-4086-8b22-609b0fc0ff12",
       "name": "HTTP Request",
       "onError": "continueRegularOutput"
     },
@@ -441,12 +441,12 @@
         },
         "options": {}
       },
-      "id": "df7a1223-5a28-41da-9eb5-4725bb838275",
+      "id": "1d1522aa-aa91-491f-9b31-0d455f8f00fb",
       "name": "Extract Amazon Product Data1",
       "type": "n8n-nodes-base.html",
       "position": [
-        1232,
-        1120
+        1472,
+        1040
       ],
       "typeVersion": 1.2,
       "onError": "continueRegularOutput"
@@ -458,10 +458,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1440,
-        1120
+        1680,
+        1040
       ],
-      "id": "fb58964c-0226-4d9b-925f-d4c15da68aa9",
+      "id": "66471d51-7537-4cfe-8c4a-d6fcb14923f2",
       "name": "Make Amazon accessible URL",
       "onError": "continueRegularOutput"
     },
@@ -472,10 +472,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1632,
-        1120
+        1872,
+        1040
       ],
-      "id": "a90fd67b-a9c5-414f-b3be-87c0350e98be",
+      "id": "5a138a94-6f9e-4c0e-b819-5211d9a7bf6b",
       "name": "Split URLs"
     },
     {
@@ -505,10 +505,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1840,
-        1120
+        2080,
+        1040
       ],
-      "id": "b8b7223e-4c54-4071-be7e-e27accd40796",
+      "id": "471192a6-edbf-4c69-bd97-d81c931def0d",
       "name": "HTTP Request for Product",
       "onError": "continueRegularOutput"
     },
@@ -519,10 +519,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2032,
-        1120
+        2272,
+        1040
       ],
-      "id": "5c519527-1998-4b8c-95b7-8927f17acd2e",
+      "id": "cd40d90a-dc71-441e-b49b-b0b054812fb7",
       "name": "Extract Data",
       "onError": "continueRegularOutput"
     },
@@ -535,11 +535,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        3696,
-        480
+        3936,
+        400
       ],
       "typeVersion": 1,
-      "id": "57287531-79c9-48dd-840b-02917a8f0994",
+      "id": "dce86c0e-a8f6-42e3-8ac8-d8152b0e3afc",
       "name": "Sticky Note"
     },
     {
@@ -551,11 +551,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        4368,
-        480
+        4608,
+        400
       ],
       "typeVersion": 1,
-      "id": "d81cbb3a-af80-4314-b422-5a5073f35e21",
+      "id": "58ff714b-8b81-44d2-af09-bfc2e100202c",
       "name": "Sticky Note2"
     },
     {
@@ -565,10 +565,10 @@
       "type": "n8n-nodes-base.html",
       "typeVersion": 1.2,
       "position": [
-        5456,
-        576
+        5696,
+        496
       ],
-      "id": "de484045-46bc-4d01-aaee-fac26e5d9110",
+      "id": "5df1a7f6-8dc1-4bd6-8798-6fd0ccd06452",
       "name": "See HTML output here"
     },
     {
@@ -578,10 +578,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        5136,
-        576
+        5376,
+        496
       ],
-      "id": "979ca464-dd62-4328-bcb8-9a7ce5cff77b",
+      "id": "cf895313-e547-48b1-bc2c-1af0c98ef5db",
       "name": "Download HTML file from Here"
     },
     {
@@ -591,10 +591,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        4848,
-        576
+        5088,
+        496
       ],
-      "id": "df98a00a-e8d8-458b-b772-898f4cffbc7c",
+      "id": "d524080f-99c5-4775-8a75-6595498ee979",
       "name": "Clean AI output"
     },
     {
@@ -605,11 +605,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1328,
-        240
+        -1088,
+        160
       ],
       "typeVersion": 1,
-      "id": "1a560010-74f3-4c3a-9cb4-32b72d3d6ce6",
+      "id": "d71a8f10-8f8d-4ad8-a386-bd1a350a3b65",
       "name": "Sticky Note1"
     },
     {
@@ -621,11 +621,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -240,
-        80
+        0,
+        0
       ],
       "typeVersion": 1,
-      "id": "09f65d7e-5d05-46a9-8ef1-471453904a3b",
+      "id": "3d24c6f1-cedf-475f-9121-98968be60b3e",
       "name": "Sticky Note3"
     },
     {
@@ -637,11 +637,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5376,
-        496
+        5616,
+        416
       ],
       "typeVersion": 1,
-      "id": "cbd41968-d1c4-4e31-9f5c-af391fcad736",
+      "id": "7517f8a7-fd0a-48f9-b0b8-e893bb19487a",
       "name": "Sticky Note4"
     },
     {
@@ -653,11 +653,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5056,
-        496
+        5296,
+        416
       ],
       "typeVersion": 1,
-      "id": "e00bf6b4-cc7b-4d49-8044-38e856081842",
+      "id": "2198cfe1-6f5b-4ec8-a8ca-973bb8dfcc50",
       "name": "Sticky Note5"
     },
     {
@@ -667,10 +667,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1520,
-        400
+        1760,
+        320
       ],
-      "id": "564596d5-c887-4b22-a45e-03c4e5386977",
+      "id": "9ab1a646-6a51-4ad7-a764-f15939cb9405",
       "name": "Split URL 1"
     },
     {
@@ -680,10 +680,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1552,
-        576
+        1792,
+        496
       ],
-      "id": "4039c2e3-d716-44b5-90d6-9708526af7a1",
+      "id": "ec688a92-8d95-43d7-bf0d-5618bd402bcb",
       "name": "Get Amazon Product Detail",
       "onError": "continueRegularOutput"
     },
@@ -694,10 +694,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        960,
-        784
+        1200,
+        704
       ],
-      "id": "6479d4c1-923d-4ef6-80fd-116bfac740be",
+      "id": "4847ac48-0947-41ff-ae29-b5ecc5526212",
       "name": "Wait",
       "webhookId": "062059f5-6e6a-4a80-b441-edd9e23877bf"
     },
@@ -718,10 +718,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1264,
-        784
+        1504,
+        704
       ],
-      "id": "d92f7dff-0ad4-4295-a230-a02e52581390",
+      "id": "3ecbd09b-993a-4fd8-bac4-1c8da805365c",
       "name": "Get HTML of website",
       "onError": "continueRegularOutput"
     },
@@ -741,12 +741,12 @@
         },
         "options": {}
       },
-      "id": "06528273-55c4-4cda-962d-88ce91b82c5f",
+      "id": "dd5bafc7-7828-4b2e-aedf-186913269827",
       "name": "Extract Amazon Product URLs",
       "type": "n8n-nodes-base.html",
       "position": [
-        1440,
-        784
+        1680,
+        704
       ],
       "typeVersion": 1.2,
       "onError": "continueRegularOutput"
@@ -770,10 +770,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1968,
-        784
+        2208,
+        704
       ],
-      "id": "ecbef583-2d59-4657-b411-27650d3234d6",
+      "id": "cad26516-4376-4c3a-a5e6-ae9290d6ceb0",
       "name": "URL wise HTML gather",
       "onError": "continueRegularOutput"
     },
@@ -784,13 +784,14 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1120,
-        576
+        1360,
+        496
       ],
-      "id": "96b5661a-b9c6-4aee-a434-6e5cf4c6dc99",
+      "id": "1db809f4-bd37-49f8-be28-0629a53e7e77",
       "name": "Amazon product"
     }
   ],
+  "pinData": {},
   "connections": {
     "When chat message received": {
       "main": [
@@ -1231,14 +1232,15 @@
       ]
     }
   },
+  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": {},
-  "pinData": {},
-  "versionId": "efb41ec4-7f4b-40e5-b491-a6126029cd62",
+  "versionId": "0442b146-ccf2-4d3d-acd6-6bd73513ecf5",
   "meta": {
-    "templateCredsSetupCompleted": true
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8240b636c6c64f03cc57d45f075cb88cf07c98f3d9cc97aa1dfcede6317c67c0"
   },
-  "active": false
+  "id": "DrvNntG1N65DOR7b",
+  "tags": []
 }

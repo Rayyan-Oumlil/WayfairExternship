@@ -3,13 +3,16 @@
 **Program:** Extern – Wayfair AI Automation Externship  
 **Duration:** Oct 27 – Dec 22, 2025  
 **Program Manager:** Christie Andersen  
-**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | ✅ Project 5 done | 🏁 Goal: Professional Award
+**Progress:** ✅ **EXTERNSHIP COMPLETE** | All 5 Projects Done | Final Presentation Complete | 🏁 Goal: Professional Award
 
 ---
 
 ## 📘 Overview
 
 This repository documents my progress through the **Wayfair AI Automation Externship**, an 8-week experience focused on **AI agents, data automation, and trend discovery**.
+
+![Market Intelligence Dashboard](./screenshots/project5/google_sheets_after_execution.png)
+*Final integrated dashboard - the culmination of all 5 projects*
 
 Each project builds on the last:
 
@@ -50,7 +53,8 @@ Each project builds on the last:
 
 **Result:** Generated moodboard images from prompts like "Bohemian rugs, neutral tones." Encountered API rate limits but confirmed full end-to-end workflow execution.
 
-**Screenshot:** ![Moodboard Agent Workflow](./screenshots/project1/moodboard_agent_workflow.png)
+**Screenshot:**
+![Moodboard Agent Workflow](./screenshots/project1/moodboard_agent_workflow.png)
 
 **Skills learned:** Building low-code AI agents with n8n, prompt engineering for visuals, handling API calls & rate-limit debugging, JSON parsing and data transformation
 
@@ -68,12 +72,15 @@ Each project builds on the last:
 **Result:** Complete end-to-end agent that transforms user queries into structured trend intelligence. Successfully tested with competitor analysis on Amazon rug listings, generating detailed reports that combine RSS signals, Google search results, and live product data.
 
 **Screenshots:**
-- Step 1: ![User Intent Identifier](./screenshots/project2/step1_user_intent_identifier.png)
-- Step 2: ![Simple AI Agent](./screenshots/project2/step2_simple_ai_agent.png)
-- Step 3: ![RSS Workflow](./screenshots/project2/step3_rss_workflow_overview.png)
-- Step 4: ![Google Search](./screenshots/project2/step4_google_overview.png)
-- Step 5: ![Amazon Scraper](./screenshots/project2/step5_amazon_scraper_workflow.png)
-- Step 6: ![Final Agent](./screenshots/project2/step6_final_trend_discovery_agent.png)
+
+![Final Trend Discovery Agent](./screenshots/project2/step6_final_trend_discovery_agent.png)
+*Complete Trend Discovery Agent workflow with all components integrated*
+
+![RSS Feed Integration](./screenshots/project2/step3_rss_workflow_overview.png)
+*RSS feed aggregation from multiple design blogs*
+
+![Amazon Scraper](./screenshots/project2/step5_amazon_scraper_workflow.png)
+*Web scraping workflow for product data extraction*
 
 **Documentation & Reports:**
 - [Final Trend Report](./docs/project2/final_trend_report.pdf) - Generated trend analysis report from competitor analysis
@@ -95,11 +102,12 @@ Each project builds on the last:
 **Result:** Complete Competitor Monitoring Agent that scrapes, merges, and analyzes competitor data to identify pricing gaps, feature trends, and whitespace opportunities for Wayfair.
 
 **Screenshots:**
-- Step 1: ![Manual Competitor Analysis](./screenshots/project3/step1_manual_competitor_analysis.png)
-- Step 2: ![Wayfair Scraper](./screenshots/project3/step2_wayfair_scraper.png)
-- Step 3: ![Amazon Scraper](./screenshots/project3/step3_amazon_scraper.png)
-- Step 4: ![Amazon Fallback Scraper](./screenshots/project3/step4_amazon_fallback_scraper.png)
-- Step 5: ![Complete Agent](./screenshots/project3/step5_complete_agent.png)
+
+![Complete Competitor Monitoring Agent](./screenshots/project3/step5_complete_agent.png)
+*Full Competitor Monitoring Agent with Wayfair and Amazon scrapers integrated*
+
+![Wayfair Scraper](./screenshots/project3/step2_wayfair_scraper.png)
+*Wayfair product data extraction workflow*
 
 **Documentation & Reports:**
 - [Final Competitor Report (PDF)](./docs/project3/competitor_monitoring_agent_report.pdf) - Generated competitive intelligence report
@@ -135,11 +143,12 @@ Each project builds on the last:
 - **Output Generation:** Produces HTML-formatted content with embedded CSS (blog posts, Instagram captions, styling tips)
 
 **Screenshots:**
-- Workflow: ![AI Content Agent Workflow](./screenshots/project4/ai_content_agent_workflow.png)
-- Evaluation: ![Evaluation Google Doc](./screenshots/project4/evaluation_google_doc.png)
-- Brand Voice Analysis: ![Wayfair Voice Analysis](./screenshots/project4/wayfair_voice_analysis_doc.png)
-- System Variation Analysis: ![System Variation Analysis](./screenshots/project4/system_variation_analysis_doc.png)
-- Loom Video: ![Loom Video Screenshot](./screenshots/project4/loom_video_screenshot.png)
+
+![AI Content Agent Workflow](./screenshots/project4/ai_content_agent_workflow.png)
+*Complete AI Insights & Content Agent workflow*
+
+![System Variation Analysis](./screenshots/project4/system_variation_analysis_doc.png)
+*Testing different system message variations to match Wayfair's brand voice*
 
 **Documentation & Reports:**
 - [Final System Message](./docs/project4/final_system_message.md) - Refined system message with brand voice alignment
@@ -202,19 +211,23 @@ Each project builds on the last:
   - `agentId = 4`: Project 4 (AI Insights & Content Agent) → 3_Allinsights sheet
 
 **Screenshots:**
-- ![Supabase Table Editor](./screenshots/project5/supabase_table_editor.png) - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
-- ![Supabase Integration Nodes](./screenshots/project5/supabase_integration_nodes.png) - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
-- ![Update Sheet Workflow](./screenshots/project5/update_sheet_workflow.png) - The n8n Project 5 workflow with Google Sheets Update nodes configured
-- ![Google Sheets After Execution](./screenshots/project5/google_sheets_after_execution.png) - The Google Sheets dashboard with data successfully populated from the workflow execution
+
+![Supabase Table Editor](./screenshots/project5/supabase_table_editor.png)
+*Supabase table with data from all 3 agents (agentId 2, 3, 4)*
+
+![Update Sheet Workflow](./screenshots/project5/update_sheet_workflow.png)
+*n8n Project 5 workflow with Google Sheets Update nodes configured*
+
+![Google Sheets Dashboard](./screenshots/project5/google_sheets_after_execution.png)
+*Live Google Sheets dashboard with real-time data from all agents*
 
 **Live Dashboard:**
 - [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0) - Real-time Market Intelligence Dashboard
 
-**Documentation & Resources:**
-- [Project 5 README](./docs/project5/README.md) - Complete integration guide, step-by-step instructions, and final presentation template
-- All workflows connected, tested, and documented
-- OAuth2 credentials configured and working
-- Dashboard tested with multiple data runs
+**Final Deliverables:**
+- [Final Presentation PDF](./docs/project5/final_presentation.pdf) ✅
+- [Project Recap](./docs/project5/PROJECT_RECAP.md) - Reflection on the entire externship journey
+- [Project 5 README](./docs/project5/README.md) - Complete integration guide and documentation
 
 **Technical Challenges Resolved:**
 - Fixed OAuth "invalid_client" error by creating new OAuth Client ID with correct redirect URI for local n8n
@@ -225,7 +238,7 @@ Each project builds on the last:
 
 **Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, Google Sheets API integration, OAuth2 authentication setup, Google Cloud Console project management, live dashboard creation with automated data pipelines, error handling and debugging in complex systems, workflow recovery and data extraction, system integration testing
 
-**Status:** ✅ Completed - Full pipeline operational: Agents → Supabase → n8n → Google Sheets Dashboard
+**Status:** ✅ **EXTERNSHIP COMPLETE** - Full pipeline operational: Agents → Supabase → n8n → Google Sheets Dashboard
 
 ---
 
@@ -249,6 +262,31 @@ Each project builds on the last:
   - `docs/project3/` → Project 3 reports and documentation ([README](./docs/project3/README.md))
   - `docs/project4/` → Project 4 reports and documentation ([README](./docs/project4/README.md))
   - `docs/project5/` → Project 5 integration guide and dashboard documentation ([README](./docs/project5/README.md))
+
+---
+
+## 🎓 Externship Completion Summary
+
+**Status:** ✅ **COMPLETE**
+
+All 5 projects successfully completed, integrated, and documented. The Market Intelligence Dashboard is fully operational, connecting all agents through Supabase to a live Google Sheets dashboard.
+
+![Market Intelligence Dashboard](./screenshots/project5/google_sheets_after_execution.png)
+*Final integrated dashboard showing real-time insights from all three AI agents*
+
+**Key Achievements:**
+- ✅ Built 3 AI agents (Trend Discovery, Competitor Monitoring, Content Generation)
+- ✅ Integrated all agents into unified Supabase database
+- ✅ Created live Google Sheets dashboard with real-time updates
+- ✅ Resolved technical challenges (OAuth, JSON parsing, workflow recovery)
+- ✅ Completed final presentation and project recap
+
+**Final Deliverables:**
+- [Final Presentation PDF](./docs/project5/final_presentation.pdf)
+- [Project Recap & Reflection](./docs/project5/PROJECT_RECAP.md)
+- [Live Dashboard](https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0)
+
+**Project Emoji:** 🚀 = launched my confidence
 
 ---
 

@@ -445,7 +445,36 @@ Build the final intelligence pipeline that connects Supabase to Google Sheets, t
      - Sheets nodes push rows into your dashboard tabs
    - Open your duplicated Google Sheet and confirm that all three tabs are updated with new data
 
-**Status:** ⏳ Not started
+**Status:** ✅ Completed - Workflow tested and data successfully flowing to Google Sheets
+
+**Testing Guide:**
+See detailed testing instructions in the "Test the Pipeline" section below.
+
+**Progress Notes:**
+- ✅ Workflow imported: `workflows/project5/supabase_sheets_integration.json`
+- ✅ Google Cloud Console OAuth credentials created:
+  - Client ID: `[REDACTED - stored securely]`
+  - Client Secret: `[REDACTED - stored securely]`
+  - Redirect URI configured for local n8n: `http://localhost:5678/rest/oauth2-credential/callback`
+- ✅ OAuth consent screen configured with test user: `rayyanoumlil@gmail.com`
+- ✅ Google Sheets credential created in n8n
+- ⚠️ Encountered "Forbidden" error when testing workflow - needs verification:
+  - Spreadsheet ID in workflow: `1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo`
+  - Need to verify Google Sheet exists and is accessible with the OAuth account
+  - Need to verify credentials are properly attached to all 3 Update nodes
+
+**Issues Resolved:**
+- Fixed OAuth "invalid_client" error by creating new OAuth Client ID with correct redirect URI for local n8n
+- Fixed OAuth "access_denied" error by adding test user to OAuth consent screen
+
+**Next Steps:**
+- ✅ Verify Google Sheet access and Spreadsheet ID
+- ✅ Test workflow execution end-to-end
+- ✅ Verify data appears in all 3 tabs (1_TrendSignals, 2_CompetitorMoves, 3_Allinsights)
+
+**Screenshots:**
+- Update Sheet Workflow: `screenshots/project5/update_sheet_workflow.png` - Shows the n8n workflow with Update sheet nodes configured
+- Google Sheets After Execution: `screenshots/project5/google_sheets_after_execution.png` - Shows the Google Sheets dashboard with data populated from the workflow
 
 #### Part 3: Create Dashboard Views ✅
 **Estimated time:** Already included in template
@@ -466,7 +495,71 @@ The Google Sheets template already includes a built-in dashboard view that autom
 
 **Status:** ✅ Already configured in template
 
-### Step 3: Presenting Business Impact ⏳
+### Step 3: Test the Pipeline and Capture Your Dashboard ⏳
+**Estimated time:** 1 hour
+
+**Objective:**
+Run all three workflows end-to-end, verify Google Sheet updates accurately, and visually confirm that your data pipeline is stable. This is your "system integration test" - proof that your entire AI–data–dashboard ecosystem works as one.
+
+**Steps:**
+
+1. **Run the Full Workflow Sequence**
+   - Open n8n and load your Project 2, 3, and 4 workflows
+   - Ensure Project 2 outputs HTML, not PDF
+   - For each workflow, use real Amazon URLs and clear prompts
+   - Run each project **twice** to generate enough data for testing
+   - Open your Google Sheets dashboard and confirm new rows appear in each tab
+
+2. **Inputs to Use**
+
+   **Project 2: Trend Discovery Agent**
+   - Inputs: Product URL + Collection URL (Amazon)
+   - Ask: "Find key product trends and attributes like size, color, material, and pattern."
+   
+   **Project 3: Competitor Monitoring Agent**
+   - Inputs: Amazon Product URL + Collection URL
+   - Ask: "Extract competitor highlights — price, rating, PDP messaging, and whitespace opportunities."
+   
+   **Project 4: Content Insights Agent**
+   - Inputs: Same URLs as P2/P3
+   - Ask: "Generate two creative ideas (one blog, one social caption) based on identified trends."
+
+   **Sample input format:**
+   ```
+   Amazon product url: <full product URL>
+   Amazon collection url: <full search/collection URL>
+   Task: <one-line instruction as above>
+   ```
+
+3. **What to Check**
+   - ✅ New rows appear under all three sheets (1_TrendSignals, 2_CompetitorMoves, 3_Allinsights)
+   - ✅ Columns are cleanly filled — no HTML tags, markdown fences, or blank cells
+   - ✅ Input column correctly shows the URLs you entered
+   - ✅ Dates, prices, and insights appear in the right columns
+   - ✅ Formulas in Sheet 4 (Executive Summary) refresh automatically
+   - ✅ Data patterns make logical sense (e.g., the same trend surfaces across projects)
+
+4. **Record Loom Video**
+   - Record a 4-5 minute Loom showing the dashboard live
+   - Walk through each of the 4 sheets
+   - Explain what's happening on-screen
+   - Show how data flows from agents → Supabase → n8n → Google Sheets
+
+5. **What to Focus on in the Dashboard**
+   - **Sheet 1 (TrendSignals):** Are trend signals consistent with what's trending online?
+   - **Sheet 2 (CompetitorMoves):** Do competitor actions align with or contradict those trends?
+   - **Sheet 3 (Allinsights):** Do your content ideas logically build on both?
+   - **Sheet 4 (ExecutiveSummary):** Does it tell a coherent "story of movement" and where Wayfair should focus next?
+
+**Deliverables:**
+- Loom recording URL (4-5 minutes) showing live dashboard walkthrough
+- Evidence of execution: Each of the first three tabs shows at least two successful data runs
+- Clean, reliable data: All columns parsed and readable
+- Traceability: Input column links clearly to task URLs, insights connect logically across projects
+
+**Status:** ⏳ Not started
+
+### Step 4: Presenting Business Impact ⏳
 **Estimated time:** 1.5 hours
 
 **Objective:**
@@ -516,9 +609,33 @@ All connected through:
 - Strategic presentation and storytelling
 - Connecting technical outputs to business value
 
+## Recent Updates & Workflow Recovery
+
+**Date: December 4, 2025**
+
+### Workflow Recovery
+- Recovered all workflows (Projects 2, 3, 4, 5) from Dockerized n8n instance
+- Workflows exported and organized:
+  - `workflows/project2/market_trend_discovery_agent.json`
+  - `workflows/project3/competitor_monitoring_agent.json`
+  - `workflows/project4/ai_insights_content_agent.json`
+  - `workflows/project5/supabase_sheets_integration.json`
+  - `workflows/project2/components/amazon_scraper.json` (component workflow)
+
+### Technical Fixes
+- **Project 4 JSON Parsing Fix**: Updated JavaScript code in "Extract data from AI output" node to robustly parse JSON from AI output, handling cases where AI returns non-JSON text or markdown code blocks
+- **Cheerio Dependency**: Resolved `Cannot find module 'cheerio'` error by installing cheerio in n8n Docker container
+- **n8n Environment**: Reinitialized n8n Docker setup with fresh instance
+
+### OAuth Configuration
+- Created new Google Cloud Console project: "n8nextern"
+- Configured OAuth 2.0 Client ID for local n8n instance
+- Set up OAuth consent screen with test user
+- Configured Google Sheets credential in n8n
+
 ## Documentation & Resources
 
-- Workflow files: `workflows/project5/` (to be created)
+- Workflow files: `workflows/project5/supabase_sheets_integration.json`
 - Screenshots: `screenshots/project5/` (to be created)
 - Dashboard exports: `docs/project5/` (to be created)
 - Loom presentation: (to be added)
@@ -526,4 +643,6 @@ All connected through:
 ---
 
 **Status:** 🚧 In Progress
+
+**Last Updated:** December 4, 2025
 

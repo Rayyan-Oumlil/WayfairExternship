@@ -581,16 +581,105 @@ Run all three workflows end-to-end, verify Google Sheet updates accurately, and 
 **Reflection on Information → Intelligence:**
 - See `docs/project5/REFLECTION.md` for detailed insights
 
-### Step 4: Presenting Business Impact ⏳
-**Estimated time:** 1.5 hours
+### Step 4: Final Presentation ⏳
+**Estimated time:** 20 minutes (preparation) + presentation time
 
 **Objective:**
-Create a presentation that highlights your dashboard, key insights, and the story your data tells.
+Create a professional presentation deck that transforms your technical work into a clear, strategic story for Wayfair's team. Showcase how your agents work, what insights they generate, and how Wayfair could use them.
+
+**Presentation Structure:**
+
+#### Slide 1: Cover Slide
+- Your name, email, and cohort
+- Professional headshot or simple image
+- Title: "Wayfair Rugs Market Intelligence: AI Agent Demo"
+
+**Opening Script:**
+"Hi Maria, I'm [your name], and this is my final presentation. I'll be walking you through my AI agent system and dashboard that helps Wayfair's Rugs category team track trends, competitors, and generate content ideas."
+
+#### Slide 2: Executive Summary
+Your "elevator pitch" for the entire project.
+
+**What goes here:**
+- **Objective**: What business goal does your externship serve
+- **Solution**: Number of agents built and their collective function
+- **Core Outputs**: Key agents (with links to sample outputs)
+  - Trend Discovery Agent – link or screenshot of output
+  - Competitor Monitoring Agent – link or screenshot of output
+  - AI Insights & Content Agent – link or output sample
+  - Integrated Dashboard – screenshot or link
+- **Key Insights**: Top findings from your agents
+- **Future Improvements**: One or two thoughtful next-step ideas
+
+#### Slide 3: Agent 1: Moodboard Generator (Optional)
+This slide is provided as a sample. You may include it if you'd like, but it's not mandatory.
+
+**What goes here:**
+- 🎯 Objective: Explain why you built this agent
+- 🧠 Input Prompt Example: One sample prompt
+- ⚠️ Keep in Mind / Input Notes: Rules, limitations, or constraints
+- 📎 Attachments:
+  - View JSON Workflow (Google Drive link)
+  - View Sample Moodboard (output example)
+- 🖼️ Output Example: Image grid or screenshots
+- 💡 Improvements: Potential enhancements
+
+#### Slides 4-6: Your Three Main Agents
+**Slide 4: Trend Discovery Agent (Project 2)**
+**Slide 5: Competitor Monitoring Agent (Project 3)**
+**Slide 6: AI Insights & Content Agent (Project 4)**
+
+**For each agent slide:**
+- 🎯 **Objective**: What this agent does
+- 🧠 **Input Prompt Example**: Sample prompt you used
+- ⚙️ **Keep in Mind / Input Notes**: What users should know, limits, or rules
+- 💡 **Improvements / Expansion Opportunities**: 
+  - Example (Trend Agent): "Currently scrapes Amazon only — can be expanded to include Walmart or IKEA"
+  - Example (Competitor Agent): "Limited to first 10 pages — adding pagination can enhance completeness"
+  - Example (AI Insights Agent): "Could connect to Wayfair's internal SKU data for deeper insights"
+- 📎 **Attachments**: 
+  - JSON Workflow (upload to Google Drive, add link)
+  - Output Sample (PDF or screenshot, upload to Google Drive, add link)
+
+**Important:** During presentation, open n8n and demonstrate each agent live. Show how they take input prompts and generate outputs. Briefly explain the workflow logic (no coding deep dive).
+
+#### Slide 7: Market Intelligence Dashboard (Project 5)
+Where everything comes together.
+
+**What goes here:**
+- 🎯 **Objective**: Why this dashboard matters
+- ⚙️ **How It Works**: Explain how the 4 agents feed into it
+- ⚠️ **Keep in Mind / Implementation Notes**: Refresh, automation, or access details
+- 💡 **Improvements**: Suggestions for next versions
+- 📎 **Attachments**:
+  - JSON Workflow (upload to Google Drive, add link)
+  - Google Sheets Dashboard Link: https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0
+  - **Important**: Give view access to the Google Sheet
+
+![Google Sheets Dashboard](screenshots/project5/google_sheets_after_execution.png)
+*The integrated dashboard showing data from all three agents*
+
+#### Slide 8: Reflections & Future Improvements
+Your chance to show learning depth and professional maturity.
+
+**What goes here:**
+- 🧭 **Key Learnings**: What you personally learned
+  - 3–4 bullet points (technical + strategic)
+- 🚀 **Future Improvements / Next Steps**: Where you'd take this next
+
+#### Slide 9: Thank You
+Your closing slide.
+
+**What goes here:**
+- "Thank you" message
+- Optional: Link to full workflow folder or demo video
 
 **Deliverables:**
-- 5–7 minute Loom presentation
-- Explains system and its implications for Wayfair's business strategy
-- Connects data to decisions and shows real impact
+- Professional presentation deck (Google Slides or PowerPoint)
+- All workflow JSON files uploaded to Google Drive with view access
+- Sample outputs uploaded to Google Drive
+- Google Sheets dashboard with view access
+- Live demonstration during presentation
 
 **Status:** ⏳ Not started
 

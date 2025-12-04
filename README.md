@@ -3,7 +3,7 @@
 **Program:** Extern – Wayfair AI Automation Externship  
 **Duration:** Oct 27 – Dec 22, 2025  
 **Program Manager:** Christie Andersen  
-**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | 🚧 Project 5 in progress | 🏁 Goal: Professional Award
+**Progress:** ✅ Project 1 done | ✅ Project 2 done | ✅ Project 3 done | ✅ Project 4 done | ✅ Project 5 done | 🏁 Goal: Professional Award
 
 ---
 
@@ -152,10 +152,12 @@ Each project builds on the last:
 
 **Skills learned:** Brand voice analysis and translation, system message engineering and prompt design, creative content generation from data insights, A/B testing system message variations, HTML/CSS formatting for AI outputs, debugging web scraping (URL detection, domain variations, bot protection), transforming analytical data into storytelling content, balancing aspiration with relatability in brand messaging
 
-### Week 9-10 – Project 5: Market Intelligence Dashboard 🚧
-**Goal:** Unify all previous workflows (Projects 2, 3, and 4) into a single live pipeline using Supabase database, creating a unified Market Intelligence Dashboard that delivers real-time insights for Wayfair's Rugs team.
+### Week 9-10 – Project 5: Market Intelligence Dashboard ✅
+**Goal:** Unify all previous workflows (Projects 2, 3, and 4) into a single live pipeline using Supabase database and Google Sheets, creating a unified Market Intelligence Dashboard that delivers real-time insights for Wayfair's Rugs team.
 
 **Workflow Steps:**
+
+#### Step 1: Supabase Integration
 1. **Supabase Setup:** Created Supabase account, organization (Extern), and project (Wayfair)
 2. **Database Table:** Created `agent_output` table with columns: `id`, `output_text`, `agentId`, `input_text`
 3. **Project 2 Integration:** Connected Trend Discovery Agent to Supabase (agentId = 2)
@@ -168,30 +170,62 @@ Each project builds on the last:
 5. **Project 4 Integration:** Connected AI Insights & Content Agent to Supabase (agentId = 4)
    - Updated Code node with agent_id = 4
    - Connected Supabase nodes with agentId = 4
+   - Fixed JSON parsing issues in Extract node for robust AI output handling
 6. **Data Flow Validation:** Verified all 3 agents successfully store outputs in Supabase
 
-**Result:** All three agents (Trend Discovery, Competitor Monitoring, Content Generation) now store their outputs in a unified Supabase database. Each agent maintains one row that gets updated on each run, creating a persistent memory system for market intelligence.
+#### Step 2: Google Sheets Dashboard Integration
+1. **Google Cloud Console Setup:** Created OAuth2 credentials for Google Sheets API
+   - Created project "n8nextern" in Google Cloud Console
+   - Enabled Google Sheets API
+   - Created OAuth Client ID with redirect URI for local n8n: `http://localhost:5678/rest/oauth2-credential/callback`
+   - Configured OAuth consent screen with test user
+2. **n8n Google Sheets Credential:** Configured Google Sheets OAuth2 credential in n8n
+3. **Workflow Import:** Imported `supabase_sheets_integration.json` workflow
+4. **Dashboard Configuration:**
+   - Connected Supabase credentials to all Get row nodes
+   - Connected Google Sheets credentials to all Update sheet nodes
+   - Configured Spreadsheet ID and sheet tabs (1_TrendSignals, 2_CompetitorMoves, 3_Allinsights)
+   - Verified column mappings for all three sheets
+5. **End-to-End Testing:** Executed full pipeline and verified data flows from Supabase → n8n → Google Sheets
+
+**Result:** Complete Market Intelligence Dashboard system that:
+- Stores all agent outputs in Supabase database (persistent memory)
+- Automatically processes HTML reports into structured JSON using Google Gemini
+- Updates Google Sheets dashboard with real-time insights
+- Provides 4-tab dashboard: Trend Signals, Competitor Moves, All Insights, and Executive Summary (auto-calculated)
 
 **Database Structure:**
 - **agent_output table:** Centralized storage for all agent outputs
 - **agentId mapping:**
-  - `agentId = 2`: Project 2 (Trend Discovery Agent)
-  - `agentId = 3`: Project 3 (Competitor Monitoring Agent)
-  - `agentId = 4`: Project 4 (AI Insights & Content Agent)
+  - `agentId = 2`: Project 2 (Trend Discovery Agent) → 1_TrendSignals sheet
+  - `agentId = 3`: Project 3 (Competitor Monitoring Agent) → 2_CompetitorMoves sheet
+  - `agentId = 4`: Project 4 (AI Insights & Content Agent) → 3_Allinsights sheet
 
 **Screenshots:**
-- Supabase Table Editor: ![Supabase Table](./screenshots/project5/supabase_table_editor.png) - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
-- Supabase Integration Nodes: ![Supabase Nodes](./screenshots/project5/supabase_integration_nodes.png) - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
-- Google Sheets dashboard (to be added)
+- ![Supabase Table Editor](./screenshots/project5/supabase_table_editor.png) - Shows the `agent_output` table with data from all 3 agents (agentId 2, 3, 4)
+- ![Supabase Integration Nodes](./screenshots/project5/supabase_integration_nodes.png) - Shows the Supabase nodes (Get a row, If, Update a row, Create a row) integrated into the workflow
+- ![Update Sheet Workflow](./screenshots/project5/update_sheet_workflow.png) - The n8n Project 5 workflow with Google Sheets Update nodes configured
+- ![Google Sheets After Execution](./screenshots/project5/google_sheets_after_execution.png) - The Google Sheets dashboard with data successfully populated from the workflow execution
+
+**Live Dashboard:**
+- [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/1oSmzk_YLSVHZZ1UQmBH9Z7b0fNJv9Wcesk4UbQ0IIZo/edit?gid=0#gid=0) - Real-time Market Intelligence Dashboard
 
 **Documentation & Resources:**
-- [Project 5 README](./docs/project5/README.md) - Complete integration guide and step-by-step instructions
-- Supabase credentials configured in n8n
-- All workflows connected and tested
+- [Project 5 README](./docs/project5/README.md) - Complete integration guide, step-by-step instructions, and final presentation template
+- All workflows connected, tested, and documented
+- OAuth2 credentials configured and working
+- Dashboard tested with multiple data runs
 
-**Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, error handling for web scraping timeouts, Referer header configuration for bot protection, Google Sheets API integration, OAuth2 authentication setup, Google Cloud Console project management, live dashboard creation with automated data pipelines
+**Technical Challenges Resolved:**
+- Fixed OAuth "invalid_client" error by creating new OAuth Client ID with correct redirect URI for local n8n
+- Fixed OAuth "access_denied" error by adding test user to OAuth consent screen
+- Fixed JSON parsing issues in Project 4 Extract node to handle AI outputs with markdown or extraneous text
+- Resolved "Cannot find module 'cheerio'" error by installing cheerio in n8n Docker container
+- Recovered workflows from Docker SQLite database when n8n account access was lost
 
-**Status:** 🚧 In Progress - Supabase integration complete, Google Sheets dashboard pending
+**Skills learned:** Database integration (Supabase), multi-workflow orchestration in n8n, data persistence and memory systems, workflow-to-database connections, CRUD operations in n8n, Google Sheets API integration, OAuth2 authentication setup, Google Cloud Console project management, live dashboard creation with automated data pipelines, error handling and debugging in complex systems, workflow recovery and data extraction, system integration testing
+
+**Status:** ✅ Completed - Full pipeline operational: Agents → Supabase → n8n → Google Sheets Dashboard
 
 ---
 
